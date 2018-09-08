@@ -33,7 +33,7 @@ public class UserController extends AbstractController {
     //跳转到主页面
     @RequestMapping(value = "/home",method = RequestMethod.GET)
     public String toHome(){
-        return"home";
+        return "homeljy";
     }
 
     //遍历
@@ -43,11 +43,11 @@ public class UserController extends AbstractController {
             List<User>list= Collections.emptyList();
             list=userService.listAllUser();
             model.addAttribute("listAllUser",list);
-            return "chengyuanjieshao";
+            return "chengyuanjieshaoljy";
         }catch (Exception e){
             LogClerk.errLog.error(e);
         }
-        return "home";
+        return "homeljy";
     }
 
     //展示
@@ -57,17 +57,17 @@ public class UserController extends AbstractController {
             List<User>show= Collections.emptyList();
             show=userService.showAllMember();
             model.addAttribute("showAllMember",show);
-            return "zhanshi";
+            return "zhanshiljy";
         }catch (Exception e){
             LogClerk.errLog.error(e);
         }
-        return "home";
+        return "homeljy";
     }
 
     //增加跳转页面
     @RequestMapping(value = "/toAdd",method = RequestMethod.GET)
     public String toAdd(){
-        return "addUser";
+        return "addUserljy";
     }
 
     //增加页面
@@ -97,7 +97,7 @@ public class UserController extends AbstractController {
     //修改跳转页面
     @RequestMapping(value = "/toUpdate",method = RequestMethod.GET)
     public String toUpdate(){
-        return "updateUser";
+        return "updateUserljy";
     }
 
     //修改页面
@@ -118,11 +118,11 @@ public class UserController extends AbstractController {
 //        try {
             if (userService.serUser(userName))
                 if(userService.pswIsTrue(userName,userPassword))
-            return "neiwang";
+            return "neiwangljy";
 //        }catch (Exception e){
 //            LogClerk.errLog.error(e);
 //        }
-        return "home";
+        return "homeljy";
     }
 
 
@@ -161,6 +161,6 @@ public class UserController extends AbstractController {
         } catch (Exception e) {
             LogClerk.errLog.error(e);
         }
-        return "neiwang";
+        return "neiwangljy";
     }
 }
