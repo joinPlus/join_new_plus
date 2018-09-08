@@ -17,8 +17,10 @@
 
     <context:component-scan base-package="com.pandawork.web" />
     <context:component-scan base-package="com.pandawork.service" />
+    <!-- 自动扫描 -->
+    <context:component-scan base-package="com.pandawork.controller" />
 
-	<!-- 导入其他配置文件 -->
+    <!-- 导入其他配置文件 -->
     <import resource="database-config.xml"></import>
     <import resource="mvc-config.xml"></import>
 

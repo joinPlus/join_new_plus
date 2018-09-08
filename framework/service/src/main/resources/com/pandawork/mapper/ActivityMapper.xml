@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pandawork.mapper.ActivityMapper">
+    <resultMap id="activity" type="com.pandawork.common.entity.Activity" >
+        <id property="id" column="id"/>
+        <result property="content" column="content"/>
+        <result property="title" column="title"/>
+        <result property="image" column="image"/>
+    </resultMap>
+
+    <select id="queryById" resultMap="activity" >
+        SELECT *
+        FROM `t_activity`
+        WHERE `id` = #{id}
+    </select>
+
+    <insert id="newActivity">
+        INSERT INTO `t_activity`
+        (`content`,`title`,`image`)
+        VALUES ( #{activity.content},#{activity.title},#{activity.image})
+    </insert>
+
+    <update id="update">
+        UPDATE `t_activity`
+        SET `content` = #{activity.content},
+        `title` = #{activity.title},
+        `image` = #{activity.image}
+        WHERE `id` = #{activity.id}
+    </update>
+
+
+    <delete id="delById">
+        DELETE FROM `t_activity`
+        WHERE `id` = #{id}
+    </delete>
+
+    <select id="listAll" resultMap="activity">
+        SELECT *
+        FROM `t_activity`
+    </select>
+</mapper>
