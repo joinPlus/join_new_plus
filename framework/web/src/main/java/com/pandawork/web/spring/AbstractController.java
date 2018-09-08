@@ -7,7 +7,6 @@ import com.pandawork.core.common.exception.SSException;
 import com.pandawork.core.common.util.Assert;
 import com.pandawork.core.framework.bean.StaticAutoWire;
 import com.pandawork.core.framework.web.spring.controller.Base;
-import com.pandawork.service.StudentService;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -171,9 +170,9 @@ public class AbstractController extends Base {
         return jsonObject;
     }
 
-    @StaticAutoWire
+/*    @StaticAutoWire
     @Qualifier("studentService")
-    protected static StudentService studentService ;
+    protected static StudentService studentService ;*/
 
 
 }

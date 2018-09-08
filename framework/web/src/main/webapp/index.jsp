@@ -15,6 +15,7 @@
 <%--<meta http-equiv="refresh" content ="0 ; url=/beauty/list">--%>
 <a href="/beauty/list">点击进入风采界面</a>
 <a href="/lunbo/list">点击进入轮播图界面</a>
+<a href="/user/home">点击进入登录界面</a>
 <%--<form action="/beauty/add" method="post" enctype="multipart/form-data">--%>
 <%--<input type='text'  name='user'/>--%>
 <%--<h2>文件上传</h2>--%>
