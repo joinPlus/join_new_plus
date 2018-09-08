@@ -1,23 +1,25 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!-- **********************************************************************************
-*Description: 登录页
-*author:      mayuan
-*date:        2015.8.25
-************************************************************************************************* -->
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>学生管理系统--登录页</title>
-    <%--<meta http-equiv="Refresh" content="0.1;url=/user/home">--%>
-    <link rel="stylesheet" type="text/css" href='<c:url value="/css/common/common.css"></c:url>'>
-    <link rel="stylesheet" type="text/css" href='<c:url value="/css/base/reset.css"></c:url>'>
-    <script type="text/javascript" src='<c:url value="/js/site-config.js"></c:url>'></script>
-    <link rel="stylesheet" type="text/css" href='<c:url value="/css/login_invert.css"></c:url>'>
+    <title>Title</title>
 </head>
 <body>
-<a href="/user/home">进入登陆页面</a>
+
+<%--<form action="${website}file/file/${id}" method="post" enctype="multipart/form-data">--%>
+<%--<input type='text'  name='textfield' id='textfield' class='txt' />--%>
+<%--<input type="file" name="file" class="file" id="fileField"--%>
+<%--size="28" onchange="document.getElementById('textfield').value=this.value" />--%>
+<%--<input type="submit"  name="submit" class="btn" value="上传" />--%>
+<%--</form>--%>
+
+<%--<meta http-equiv="refresh" content ="0 ; url=/beauty/list">--%>
+<a href="/beauty/list">点击进入风采界面</a>
+<a href="/lunbo/list">点击进入轮播图界面</a>
+<%--<form action="/beauty/add" method="post" enctype="multipart/form-data">--%>
+<%--<input type='text'  name='user'/>--%>
+<%--<h2>文件上传</h2>--%>
+<%--文件:<input type = "file" name="uploadFile"/><br/><br/>--%>
+<%--<input type="submit" value="上传"/>--%>
+<%--</form>--%>
 </body>
 </html>
