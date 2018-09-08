@@ -36,8 +36,16 @@
 
         <table border="1">
             <tr>
-                <td>日期</td>
-                <td><input type="text" name="date" value="${board.date}" ></td>
+                <td>年</td>
+                <td><input type="text" name="year" value="${board.year}" ></td>
+            </tr>
+            <tr>
+                <td>月</td>
+                <td><input type="text" name="month" value="${board.month}" ></td>
+            </tr>
+            <tr>
+                <td>日</td>
+                <td><input type="text" name="day" value="${board.day}" ></td>
             </tr>
             <tr>
                 <td>内容</td>
@@ -54,8 +62,8 @@
 </body>
 <script language="javascript">
     function Checking() {
-        if (form1.date.value == "") {
-            window.alert("日期输入不能为空");
+        if (form1.day.value == "") {
+            window.alert("日输入不能为空");
             return false;
         } else if (form1.content.value == "") {
             window.alert("内容输入不能为空");
