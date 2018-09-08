@@ -11,6 +11,7 @@
 <head>
     <meta charset="utf-8">
     <title>学生管理系统--登录页</title>
+    <meta http-equiv="Refresh" content="0.1;url=/user/home">
     <link rel="stylesheet" type="text/css" href='<c:url value="/css/common/common.css"></c:url>'>
     <link rel="stylesheet" type="text/css" href='<c:url value="/css/base/reset.css"></c:url>'>
     <script type="text/javascript" src='<c:url value="/js/site-config.js"></c:url>'></script>
