@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pandawork.mapper.BoardMapper">
+    <resultMap id="board" type="com.pandawork.common.entity.Board" >
+        <id property="id" column="id"/>
+        <result property="content" column="content"/>
+        <result property="year" column="year"/>
+        <result property="month" column="month"/>
+        <result property="day" column="day"/>
+    </resultMap>
+
+    <select id="queryById" resultMap="board" >
+        SELECT *
+        FROM `t_board_out`
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="queryByKeyword" resultMap="board">
+        SELECT *
+        FROM `t_board_out`
+        WHERE `content` LIKE '%${keyword}%'
+
+    </select>
+
+    <insert id="newBoard">
+        INSERT INTO `t_board_out`
+        (`content`,`year`,`month`,`day`)
+        VALUES ( #{board.content},#{board.year},#{board.month},#{board.day})
+    </insert>
+
+    <update id="update">
+        UPDATE `t_board_out`
+        SET
+        `content` = #{board.content},
+        `year` = #{board.year},
+        `month` = #{board.month},
+        `day` = #{board.day}
+        WHERE `id` = #{board.id}
+    </update>
+
+    <delete id="delById">
+        DELETE FROM `t_board_out`
+        WHERE `id` = #{id}
+    </delete>
+
+    <select id="listAll" resultMap="board">
+        SELECT *
+        FROM `t_board_out`
+    </select>
+
+</mapper>
