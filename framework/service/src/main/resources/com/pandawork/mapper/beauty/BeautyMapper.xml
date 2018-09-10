@@ -12,22 +12,22 @@
 
     <select id="listAllBeauty" resultMap="beauty">
         SELECT *
-        FROM `t_beauty`
+        FROM `t_beauty_out`
     </select>
 
     <insert id="addBeauty">
-        INSERT INTO `t_beauty`
+        INSERT INTO `t_beauty_out`
         (`name`,`path`)
         VALUES (#{beauty.name}, #{beauty.path})
     </insert>
 
     <delete id="delBeauty">
-        DELETE FROM `t_beauty`
+        DELETE FROM `t_beauty_out`
         WHERE `id` = #{id}
     </delete>
 
     <update id="updateBeauty">
-        UPDATE `t_beauty`
+        UPDATE `t_beauty_out`
         SET `name` = #{beauty.name},
             `path` = #{beauty.path}
         WHERE `id` = #{beauty.id}
@@ -35,7 +35,7 @@
 
     <select id="selectById" resultMap="beauty" >
         SELECT *
-        FROM `t_beauty`
+        FROM `t_beauty_out`
         WHERE `id` = #{id}
     </select>
 </mapper>

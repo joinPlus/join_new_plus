@@ -7,34 +7,78 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>修改页面</title>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../css/base/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common/Title&Sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/widget/ActivitiesImg_change.css" />
+    <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../js/Title&Sidebar.js"></script>
+    <script type="text/javascript" src="../../js/ActivitiesImg_change.js"></script>
 </head>
 <body>
-<div style="margin-top:180px;" align="center">
+<div id="title">
+    <div id="title_words">
+        <span>卓音工作室后台管理</span>
+    </div>
+    <div id="user">
+        <ul>
+            <li id="head_img">
+                <a href="">
+                    <img src="../../resource/img/ensure.png" width="35px" height="35px" />
+                    <span>haha,欢迎您</span>
+                </a>
+            </li>
+            <li>
+                <a href="首页">
+                    注销
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="sidebar">
+    <ul>
+        <li></li>
+        <li><a href="">轮播图管理</a></li>
+        <li><a href="">公告管理</a></li>
+        <li><a href="">部门成员管理</a></li>
+        <li><a href="">日历管理</a></li>
+        <li><a href="lessonFiles.html">课件管理</a></li>
+        <li><a href="">活动管理</a></li>
+        <li><a href="ActivitiesImg.html">风采图片管理</a></li>
+        <li><a href="registration_form.html">报名人员管理</a></li>
+        <li><a href="Suggestions.html">提交意见查看</a></li>
+    </ul>
+</div>
+<div id="change_title">
+    <span>图片修改</span>
+</div>
+<div id="load_table">
     <form action="${website}beauty/update/${beauty.id}" method="post" enctype="multipart/form-data">
-        <table border="1">
+        <table id="simgle_photo">
             <tr>
-                <td> 图片名称 </td>
+                <th>标题</th>
+                <th>图片</th>
+                <th>操作</th>
+            </tr>
+
+            <tr>
                 <td>
                     <input type="text" name="name" value="${beauty.name}"/>
                 </td>
-            </tr>
-            <tr>
-                <td> 图片 </td>
                 <td>
-                        <input type="text" name="path" value="${beauty.path}" hidden/>
-                        <img name="path" src="${beauty.path}"/>
+                    <img name="path" src="${beauty.path}" width="230px" height="180px"/>
+
+                    <input type="text" name="path" value="${beauty.path}" hidden/>
                 </td>
-            </tr>
-            <tr>
-                <th align="center">
-                    <a href="/beauty/list"><input type="button" value="取消" ></a>
-                </th>
-                <th align="right">
-                    <input type="submit" name="submit" value="修改"/>
-                </th>
+                <td>
+                    <button type="submit">确认</button>
+                    <a href="/beauty/list"><button type="button">取消</button></a>
+                </td>
             </tr>
         </table>
     </form>

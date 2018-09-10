@@ -12,22 +12,22 @@
 
     <select id="listAllLunbo" resultMap="lunbo">
         SELECT *
-        FROM `t_lunbo`
+        FROM `t_lunbo_out`
     </select>
 
     <insert id="addLunbo">
-        INSERT INTO `t_lunbo`
+        INSERT INTO `t_lunbo_out`
         (`name`,`path`)
         VALUES (#{lunbo.name}, #{lunbo.path})
     </insert>
 
     <delete id="delLunbo">
-        DELETE FROM `t_lunbo`
+        DELETE FROM `t_lunbo_out`
         WHERE `id` = #{id}
     </delete>
 
     <update id="updateLunbo">
-        UPDATE `t_lunbo`
+        UPDATE `t_lunbo_out`
         SET `name` = #{lunbo.name},
             `path` = #{lunbo.path}
         WHERE `id` = #{lunbo.id}
@@ -35,7 +35,7 @@
 
     <select id="selectById" resultMap="lunbo" >
         SELECT *
-        FROM `t_lunbo`
+        FROM `t_lunbo_out`
         WHERE `id` = #{id}
     </select>
 </mapper>
