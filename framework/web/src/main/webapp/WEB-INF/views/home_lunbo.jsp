@@ -44,13 +44,13 @@
 <div id="sidebar">
     <ul>
         <li></li>
-        <li><a href="">轮播图管理</a></li>
+        <li><a href="/lunbo/list">轮播图管理</a></li>
         <li><a href="">公告管理</a></li>
         <li><a href="">部门成员管理</a></li>
         <li><a href="">日历管理</a></li>
         <li><a href="">课件管理</a></li>
         <li><a href="">活动管理</a></li>
-        <li><a href="">风采图片管理</a></li>
+        <li><a href="/beauty/list">风采图片管理</a></li>
         <li><a href="">报名人员管理</a></li>
         <li><a href="">提交意见查看</a></li>
     </ul>
@@ -72,10 +72,10 @@
                 <td>${lunbo.name}</td>
                 <td>
                     <a href="${website}lunbo/toUpdate/${lunbo.id}">
-                        <img src="../../img/common/change.png" class="update" />
+                        <img src="../../img/change.png" class="update" />
                     </a>
                     <a href="${website}lunbo/del/${lunbo.id}">
-                        <img src="../../img/common/delete.png"  class="delete"/>
+                        <img src="../../img/delete.png"  class="delete"/>
                     </a>
                 </td>
             </tr>
