@@ -23,6 +23,5 @@
     </div>
     <input type="submit" class="login_icon" value="login"/>
 </form>
-<%--<a href="/WEB-INF/views/register.jsp"><button>注册</button></a>--%>
 </body>
 </html>
