@@ -88,7 +88,7 @@ public class FreshmanController extends AbstractController{
     public String deleteFreshman(@PathVariable("id") int id){
         try {
             freshmanService.deleteFreshman(id);
-            return "entryControl";
+            return "redirect:/entry/listAll";
         } catch (SSException e) {
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());
@@ -100,7 +100,14 @@ public class FreshmanController extends AbstractController{
     public String searchById(Model model,@PathVariable("id") int id){
         try {
             model.addAttribute("freshman", freshmanService.getFreshman(id));
-            return "entryControl";
+            String yon = new String();
+            if(freshmanService.getFreshman(id).getYon() == 1){
+                yon = "是";
+            }else if(freshmanService.getFreshman(id).getYon() == 0){
+                yon = "否";
+            }
+            model.addAttribute("yon",yon);
+            return "entryInfo";
         } catch (SSException e ){
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());
@@ -115,7 +122,7 @@ public class FreshmanController extends AbstractController{
             f = freshmanService.getFreshman(id);
             f.setPass(pass);
             freshmanService.updateFreshman(f);
-            return "entryControl";
+            return "redirect:/entry/listAll";
         } catch (SSException e ){
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());
