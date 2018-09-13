@@ -43,13 +43,13 @@
 <div id="sidebar">
     <ul>
         <li></li>
-        <li><a href="">轮播图管理</a></li>
+        <li><a href="/lunbo/list">轮播图管理</a></li>
         <li><a href="">公告管理</a></li>
         <li><a href="">部门成员管理</a></li>
         <li><a href="">日历管理</a></li>
         <li><a href="lessonFiles.html">课件管理</a></li>
         <li><a href="">活动管理</a></li>
-        <li><a href="ActivitiesImg.html">风采图片管理</a></li>
+        <li><a href="/beauty/list">风采图片管理</a></li>
         <li><a href="registration_form.html">报名人员管理</a></li>
         <li><a href="Suggestions.html">提交意见查看</a></li>
     </ul>

@@ -60,7 +60,7 @@ public class ActivityController extends AbstractController {
         }
         activityService.newActivity(activity);
         model.addAttribute("image", activity.getImage());
-        return "activitysuccess";
+        return "redirect:/activity/list";
     }
     @RequestMapping(value="/update/{id}", method = RequestMethod.POST)
     public String updateActivity(@PathVariable("id") int id,Activity activity, HttpSession session, MultipartFile uploadFile, Model model) throws SSException {
@@ -77,7 +77,7 @@ public class ActivityController extends AbstractController {
         }
         activityService.update(activity);
         model.addAttribute("image",activity.getImage());
-        return "activitysuccess1";
+        return "redirect:/activity/list";
     }
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String toNewActivity(@PathVariable("id") int id,Model model,Activity activity){

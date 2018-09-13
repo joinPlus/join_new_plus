@@ -1,0 +1,20 @@
+$(function(){
+    $("#sidebar ul li:nth-child(7) a").hover(function(){
+        $(this).css({
+            "background-color":"rgb(78,84,101)"
+        });
+    },function(){
+        $(this).css({
+            "background-color":"rgb(78,84,101)"
+        });
+    });
+    $("#change_through").click(function(){
+        $("#change_file").click();
+    });
+    $("#photo_address").focus(function(){
+        $("#change_file").click();
+    });
+    $("#change_file").change(function(){
+        $("#photo_address").val($("#change_file").val());
+    });
+})
