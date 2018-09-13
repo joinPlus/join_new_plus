@@ -47,7 +47,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../../css/base/reset.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common/Title&Sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/widget/Activities.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/widget/Activity.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../../js/Title&Sidebar.js"></script>
     <script type="text/javascript" src="../../js/Activities.js"></script>
@@ -76,14 +76,14 @@
 <div id="sidebar">
     <ul>
         <li></li>
-        <li><a href="">轮播图管理</a></li>
-        <li><a href="">公告管理</a></li>
-        <li><a href="">部门成员管理</a></li>
+        <li><a href="${website}lunbo/list">轮播图管理</a></li>
+        <li><a href="${website}board/list">公告管理</a></li>
+        <li><a href="${website}user/list">部门成员管理</a></li>
         <li><a href="">日历管理</a></li>
         <li><a href="lessonFiles.html">课件管理</a></li>
-        <li><a href="Activities.html">活动管理</a></li>
-        <li><a href="ActivitiesImg.html">风采图片管理</a></li>
-        <li><a href="registration_form.html">报名人员管理</a></li>
+        <li><a href="${website}activity/list">活动管理</a></li>
+        <li><a href="${website}beauty/list">风采图片管理</a></li>
+        <li><a href="${website}entry/listAll">报名人员管理</a></li>
         <li><a href="Suggestions.html">提交意见查看</a></li>
     </ul>
 </div>
@@ -101,20 +101,20 @@
         </tr>
         <c:forEach items="${activityList}" var="activity" varStatus="status">
         <tr>
-        <td>${status.index+1}</td>
-        <td>${activity.title}</td>
-        <td>${activity.content}</td>
-        <td><img src="${activity.image}"></td>
-        <td>
-            <a href="/activity/toAdd"><button type="button" id="add" value="增加">增加</button></a>
-            <a href="${website}activity/edit/${activity.id}"><button type="button" id="update" value="修改">修改</button></a>
-            <a href="${website}activity/delete/${activity.id}"><button type="button" id="delete" value="删除">删除</button></a>
-        </td>
+            <td>${status.index+1}</td>
+            <td>${activity.title}</td>
+            <td>${activity.content}</td>
+            <td><img src="${activity.image}" width="230px" height="180px"/></td>
+            <td>
+                <a href="${website}activity/edit/${activity.id}"><button type="button" id="update" value="修改">修改</button></a>
+                <a href="${website}activity/delete/${activity.id}"><button type="button" id="delete" value="删除">删除</button></a>
+            </td>
         </tr>
         </c:forEach>
-        <tr>
-            </tr>
     </table>
+    <div id="add_tool">
+        <a href="/activity/toAdd"><button type="button" id="add" value="增加">增加</button></a>
+    </div>
 </div>
 </body>
 </html>

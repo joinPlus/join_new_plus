@@ -14,7 +14,8 @@
 <%--<body>--%>
 <%--<a href="/board/add">添加公告</a>--%>
 <%--<table border="1" cellspacing="0" cellpadding="0" style="text-align: center;font-size: 20px">--%>
-    <%--<form method="post" action="${website}/board/list">--%>
+    <%--<form method="post" action
+    ="${website}/board/list">--%>
         <%--<tr>--%>
             <%--<th>序号</th>--%>
             <%--<th>id&nbsp&nbsp</th>--%>
@@ -81,15 +82,15 @@
 <div id="sidebar">
     <ul>
         <li></li>
-        <li><a href="">轮播图管理</a></li>
-        <li><a href="">公告管理</a></li>
-        <li><a href="">部门成员管理</a></li>
+        <li><a href="${website}lunbo/list">轮播图管理</a></li>
+        <li><a href="${website}board/list">公告管理</a></li>
+        <li><a href="${website}user/list">部门成员管理</a></li>
         <li><a href="">日历管理</a></li>
-        <li><a href="">课件管理</a></li>
-        <li><a href="">活动管理</a></li>
-        <li><a href="">风采图片管理</a></li>
-        <li><a href="">报名人员管理</a></li>
-        <li><a href="">提交意见查看</a></li>
+        <li><a href="lessonFiles.html">课件管理</a></li>
+        <li><a href="${website}activity/list">活动管理</a></li>
+        <li><a href="${website}beauty/list">风采图片管理</a></li>
+        <li><a href="${website}entry/listAll">报名人员管理</a></li>
+        <li><a href="Suggestions.html">提交意见查看</a></li>
     </ul>
 </div>
 <!--公告后台管理-->

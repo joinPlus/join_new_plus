@@ -14,6 +14,7 @@
     <%--<title>公告信息修改</title>--%>
 <%--</head>--%>
 <%--<style type="text/css">--%>
+
     <%--*{--%>
         <%--margin: 0px;--%>
         <%--padding: 0px;--%>
