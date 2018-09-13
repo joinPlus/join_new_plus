@@ -14,7 +14,8 @@
 <%--<body>--%>
 <%--<a href="/board/add">添加公告</a>--%>
 <%--<table border="1" cellspacing="0" cellpadding="0" style="text-align: center;font-size: 20px">--%>
-    <%--<form method="post" action="${website}/board/list">--%>
+    <%--<form method="post" action
+    ="${website}/board/list">--%>
         <%--<tr>--%>
             <%--<th>序号</th>--%>
             <%--<th>id&nbsp&nbsp</th>--%>
