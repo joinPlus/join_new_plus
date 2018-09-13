@@ -1,18 +1,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
+
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>ueditor demo</title>
 </head>
+
 <body>
-
-<%--<form action="${website}file/file/${id}" method="post" enctype="multipart/form-data">--%>
-<%--<input type='text'  name='textfield' id='textfield' class='txt' />--%>
-<%--<input type="file" name="file" class="file" id="fileField"--%>
-<%--size="28" onchange="document.getElementById('textfield').value=this.value" />--%>
-<%--<input type="submit"  name="submit" class="btn" value="上传" />--%>
-<%--</form>--%>
-
-<%--<meta http-equiv="refresh" content ="0 ; url=/beauty/list">--%>
+<!-- 加载编辑器的容器 -->
+<script id="container" name="content" type="text/plain">
+        这里写你的初始化内容
+    </script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="UEditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="UEditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>
 <a href="/beauty/list">点击进入风采界面</a>
 <a href="/lunbo/list">点击进入轮播图界面</a>
 <a href="/user/home">点击进入登录界面</a>
@@ -20,11 +27,6 @@
 <a href="/board/list">点击进入公告界面</a>
 <a href="/activity/list">点击进入活动界面</a>
 <a href="/project/list">点击进入内网界面</a>
-<%--<form action="/beauty/add" method="post" enctype="multipart/form-data">--%>
-<%--<input type='text'  name='user'/>--%>
-<%--<h2>文件上传</h2>--%>
-<%--文件:<input type = "file" name="uploadFile"/><br/><br/>--%>
-<%--<input type="submit" value="上传"/>--%>
-<%--</form>--%>
 </body>
+
 </html>
