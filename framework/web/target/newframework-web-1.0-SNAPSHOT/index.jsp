@@ -27,6 +27,7 @@
 <a href="/board/list">点击进入公告界面</a>
 <a href="/activity/list">点击进入活动界面</a>
 <a href="/project/list">点击进入内网界面</a>
+<a href="/TongGao/getall">点击进入通告页面</a>
 </body>
 
 </html>
