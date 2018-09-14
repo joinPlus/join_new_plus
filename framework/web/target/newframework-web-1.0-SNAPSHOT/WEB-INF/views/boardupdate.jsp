@@ -149,7 +149,7 @@
             <tr>
                 <td>内容：</td>
                 <td>
-                    <textarea name="content" value="${board.content}"></textarea>
+                    <input  type="text" name="content" value="${board.content}">
                 </td>
             </tr>
             <tr>

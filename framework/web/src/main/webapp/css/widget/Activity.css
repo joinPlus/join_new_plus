@@ -20,6 +20,7 @@ a:hover{
     margin: 0 auto;
     /*border: 1px solid red;*/
     padding-bottom: 5%;
+
 }
 #sidebar ul li:nth-child(7) a{
     background-color: rgb(78,84,101);
