@@ -9,4 +9,5 @@ public interface TongGaoService {
     List<TongGao> getAllTongGao();
     boolean addTongGao(TongGao tg);
     File downLoad(int id);
+    void delTongGao(int id);
 }

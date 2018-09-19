@@ -26,4 +26,8 @@
         FROM t_tonggao_beta
         where id=#{id}
     </select>
+
+    <delete id="delTongGao">
+        DELETE from t_tonggao_beta where id = #{id}
+    </delete>
 </mapper>

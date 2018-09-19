@@ -31,4 +31,9 @@ public class TongGaoServiceImpl implements TongGaoService {
 
         return null;
     }
+
+    @Override
+    public void delTongGao(int id) {
+         tonggaoMapper.delTongGao(id);
+    }
 }

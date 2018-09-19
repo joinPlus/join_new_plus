@@ -24,6 +24,7 @@
         <td>${tg.id}</td>
         <td>${tg.title}</td>
         <td><a href="/TongGao/downLoad?filename=${tg.file}">下载</a></td>
+        <td><a href="/TongGao/delTongGao?id=${tg.id}">删除</a></td>
     </tr>
     </c:forEach>
 

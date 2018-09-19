@@ -60,4 +60,10 @@ public class TongGaoController extends AbstractController {
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file), headers, HttpStatus.CREATED);
     }
+
+    @RequestMapping("/delTongGao")
+    public String delTongGao(int id){
+        tonggaoService.delTongGao(id);
+        return "redirect:/TongGao/getall";
+    }
 }

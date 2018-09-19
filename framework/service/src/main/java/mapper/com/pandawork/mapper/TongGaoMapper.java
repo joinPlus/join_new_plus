@@ -9,4 +9,5 @@ public interface TongGaoMapper {
     List<TongGao> GetAllTonggao();
     boolean addTongGao(@Param("tg") TongGao tongGao);
     TongGao downLoad(@Param("id") int id);
+    boolean delTongGao(@Param("id") int id);
 }
