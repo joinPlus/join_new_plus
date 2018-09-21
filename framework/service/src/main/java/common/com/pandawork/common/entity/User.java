@@ -50,6 +50,10 @@ public class User extends AbstractEntity {
     @Column(name = "member_image")
     private String userImage;
 
+    //成员权限
+    @Column(name = "member_power")
+    private int userPower;
+
 
     //get set 方法
 
@@ -126,9 +130,16 @@ public class User extends AbstractEntity {
         this.userImage = userImage;
     }
 
+    public int getUserPower() {
+        return userPower;
+    }
 
+    public void setUserPower(int userPower) {
+        this.userPower = userPower;
+    }
 
     //toString方法
+
 
     @Override
     public String toString() {
@@ -139,9 +150,10 @@ public class User extends AbstractEntity {
                 ", userDepartment='" + userDepartment + '\'' +
                 ", userNumber=" + userNumber +
                 ", userGrade='" + userGrade + '\'' +
-                ", userPost='" + userJob + '\'' +
+                ", userJob='" + userJob + '\'' +
                 ", userIntroduction='" + userIntroduction + '\'' +
                 ", userImage='" + userImage + '\'' +
+                ", userPower=" + userPower +
                 '}';
     }
 }

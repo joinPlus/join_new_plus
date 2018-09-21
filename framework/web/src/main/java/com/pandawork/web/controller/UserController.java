@@ -33,7 +33,7 @@ public class UserController extends AbstractController {
     //跳转到主页面
     @RequestMapping(value = "/home",method = RequestMethod.GET)
     public String toHome(){
-        return "homeljy";
+        return "log_in";
     }
 
     //遍历
@@ -43,31 +43,59 @@ public class UserController extends AbstractController {
             List<User>list= Collections.emptyList();
             list=userService.listAllUser();
             model.addAttribute("listAllUser",list);
-            return "chengyuanjieshaoljy";
+            return "DepartmentMember";
         }catch (Exception e){
             LogClerk.errLog.error(e);
         }
-        return "homeljy";
+        return "log_in";
     }
 
-    //展示
-    @RequestMapping(value = "/show",method = RequestMethod.GET)
-    public String showAllMember(Model model){
+    //展示产品部
+    @RequestMapping(value = "/show1",method = RequestMethod.GET)
+    public String showAllMember1(Model model){
         try {
-            List<User>show= Collections.emptyList();
-            show=userService.showAllMember();
-            model.addAttribute("showAllMember",show);
-            return "zhanshiljy";
+            List<User>show1= Collections.emptyList();
+            show1=userService.showAllMember1();
+            model.addAttribute("showAllMember1",show1);
+            return "DMPWW";
         }catch (Exception e){
             LogClerk.errLog.error(e);
         }
-        return "homeljy";
+        return "log_in";
+    }
+
+    //展示前端部
+    @RequestMapping(value = "/show2",method = RequestMethod.GET)
+    public String showAllMember2(Model model){
+        try {
+            List<User>show2= Collections.emptyList();
+            show2=userService.showAllMember2();
+            model.addAttribute("showAllMember2",show2);
+            return "DMFWW";
+        }catch (Exception e){
+            LogClerk.errLog.error(e);
+        }
+        return "log_in";
+    }
+
+    //展示后端部
+    @RequestMapping(value = "/show3",method = RequestMethod.GET)
+    public String showAllMember3(Model model){
+        try {
+            List<User>show3= Collections.emptyList();
+            show3=userService.showAllMember3();
+            model.addAttribute("showAllMember3",show3);
+            return "DMBWW";
+        }catch (Exception e){
+            LogClerk.errLog.error(e);
+        }
+        return "log_in";
     }
 
     //增加跳转页面
     @RequestMapping(value = "/toAdd",method = RequestMethod.GET)
     public String toAdd(){
-        return "addUserljy";
+        return "DMadd";
     }
 
     //增加页面
@@ -97,7 +125,7 @@ public class UserController extends AbstractController {
     //修改跳转页面
     @RequestMapping(value = "/toUpdate",method = RequestMethod.GET)
     public String toUpdate(){
-        return "updateUserljy";
+        return "DMupdate";
     }
 
     //修改页面
@@ -118,11 +146,11 @@ public class UserController extends AbstractController {
 //        try {
             if (userService.serUser(userName))
                 if(userService.pswIsTrue(userName,userPassword))
-            return "neiwangljy";
+            return "redirect:/user/list";
 //        }catch (Exception e){
 //            LogClerk.errLog.error(e);
 //        }
-        return "homeljy";
+        return "log_in";
     }
 
 

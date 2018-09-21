@@ -15,13 +15,34 @@ public interface UserService {
      * @throws Exception
      */
     public List<User>listAllUser() throws Exception;
+//
+//    /**
+//     * 展示各部门成员aa22
+//     * @return
+//     * @throws Exception
+//     */
+//    public List<User>showAllMember()throws Exception;
 
     /**
-     * 展示各部门成员aa22
+     * 展示产品部成员
      * @return
      * @throws Exception
      */
-    public List<User>showAllMember()throws Exception;
+    public List<User>showAllMember1()throws Exception;
+
+    /**
+     * 展示前端成员
+     * @return
+     * @throws Exception
+     */
+    public List<User>showAllMember2()throws Exception;
+
+    /**
+     * 展示后端部成员
+     * @return
+     * @throws Exception
+     */
+    public List<User>showAllMember3()throws Exception;
 
     /**
      * 增加用户（即注册）

@@ -52,9 +52,9 @@
             <li class="mainmenu">
                 <a class="link" href="">部门介绍</a>
                 <dl>
-                    <dd> <a href="">产品部</a></dd>
-                    <dd> <a href="">前端部</a></dd>
-                    <dd> <a href="">后端部</a></dd>
+                    <dd> <a href="/user/show1">产品部</a></dd>
+                    <dd> <a href="/user/show2">前端部</a></dd>
+                    <dd> <a href="/user/show3">后端部</a></dd>
                 </dl>
             </li>
             <li class="mainmenu">

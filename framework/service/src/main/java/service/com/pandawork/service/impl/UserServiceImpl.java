@@ -42,18 +42,60 @@ public class UserServiceImpl implements UserService {
         return listAllUser;
     }
 
+//    /**
+//     * 展示各部门成员
+//     */
+//    @Override
+//    public List<User>showAllMember()throws Exception{
+//        List<User>showAllMember = Collections.emptyList();
+//        try {
+//            showAllMember = userMapper.showAllMember();
+//        }catch (Exception e){
+//            LogClerk.errLog.error(e);
+//        }
+//        return showAllMember;
+//    }
+
     /**
-     * 展示各部门成员
+     * 展示产品部成员
      */
     @Override
-    public List<User>showAllMember()throws Exception{
-        List<User>showAllMember = Collections.emptyList();
+    public List<User>showAllMember1()throws Exception{
+        List<User>showAllMember1 = Collections.emptyList();
         try {
-            showAllMember = userMapper.showAllMember();
+            showAllMember1 = userMapper.showAllMember1();
         }catch (Exception e){
             LogClerk.errLog.error(e);
         }
-        return showAllMember;
+        return showAllMember1;
+    }
+
+    /**
+     * 展示前端部成员
+     */
+    @Override
+    public List<User>showAllMember2()throws Exception{
+        List<User>showAllMember2 = Collections.emptyList();
+        try {
+            showAllMember2 = userMapper.showAllMember2();
+        }catch (Exception e){
+            LogClerk.errLog.error(e);
+        }
+        return showAllMember2;
+    }
+
+    /**
+     * 展示后端部成员
+     */
+    @Override
+    public List<User>showAllMember3()throws Exception{
+        List<User>showAllMember3 = Collections.emptyList();
+        try {
+            showAllMember3 = userMapper.showAllMember3();
+        }catch (Exception e){
+            LogClerk.errLog.error(e);
+        }
+        return showAllMember3;
     }
 
     /**

@@ -125,10 +125,6 @@
                 <td><input type="number" name="rank" id="rank" class="mininput">/<input type="number" name="rankAll" id="rankAll" class="mininput"></td>
             </tr>
             <tr>
-                <%--<p>籍贯：<select name="nativePlace" id="nativePlace">--%>
-                <%--<option value="bei">北半球🌎</option>--%>
-                <%--<option value="nan">南半球</option>--%>
-                <%--</select></p>--%>
                 <td>生源地</td>
                 <td colspan="2">
                     <select name="nativePlace" id="province" class="smallinput">
