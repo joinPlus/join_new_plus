@@ -38,7 +38,7 @@ public class BeautyController extends AbstractController{
             list = beautyService.listAllBeauty();
             //此即为foreach循环的item
             model.addAttribute("beautyList", list);
-            return "home_beauty";
+            return "home";
         } catch (SSException e) {
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());

@@ -71,7 +71,6 @@
                 <td>
                     <a href="${website}beauty/toUpdate/${beauty.id}"><button type="submit"  value="修改">修改</button></a>
                     <a href="${website}beauty/del/${beauty.id}"><button type="submit"  value="修改">删除</button></a>
-
                 </td>
             </tr>
             </c:forEach>
