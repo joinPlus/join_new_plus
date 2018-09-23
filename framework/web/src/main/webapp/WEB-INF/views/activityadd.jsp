@@ -13,10 +13,10 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../../css/base/reset.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common/Title&Sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/widget/Activities_add.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/widget/Activity_Add.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../../js/Title&Sidebar.js"></script>
-        <script type="text/javascript" src="../../js/Activity_Add.js"></script>
+        <script type="text/javascript" src="../../js/Activities_Add.js"></script>
 </head>
 <body>
 <div id="title">
@@ -62,21 +62,22 @@
             <tr>
                 <th>标题</th>
                 <th>活动内容</th>
-                <th>图片1</th>
-                <th>图片2</th>
-                <th>图片3</th>
-                <th style="width: 250px;">操作</th>
+                <th style="width: 350px;">图片1</th>
+                <th style="width: 350px;">图片2</th>
+                <th style="width: 350px;">图片3</th>
+                <th style="width: 100px;">选中</th>
+                <th style="width: 200px;">操作</th>
             </tr>
             <tr>
                 <td>
                     <input type="text" name="title" value="" />
                 </td>
                 <td>
-                    <input type="text"  name="content" value=""/>
+                    <textarea name="content" id="" cols="30" rows="10"></textarea>
                 </td>
 
                 <td>
-                    <img  width="118px" height="165.2px" />
+                    <img  src="" width="200px" height="150px" />
                     <input type="file" name="uploadFile1" id="change_file1" style="display: none" /><!-- 被隐藏 -->
                     <div id="new_tool1">
                         <input type="text" name="photo_address1" id="photo_address1" placeholder="图片1路径" />
@@ -84,7 +85,7 @@
                     </div>
                 </td>
                 <td>
-                    <img  width="118px" height="165.2px" />
+                    <img  src="" width="200px" height="150px" />
                     <input type="file" name="uploadFile2" id="change_file2" style="display: none" /><!-- 被隐藏 -->
                     <div id="new_tool2">
                         <input type="text" name="photo_address2" id="photo_address2" placeholder="图片2路径" />
@@ -92,14 +93,17 @@
                     </div>
                 </td>
                 <td>
-                    <img  width="118px" height="165.2px" />
+                    <img  src="" width="200px" height="150px" />
                     <input type="file" name="uploadFile3" id="change_file3" style="display: none" /><!-- 被隐藏 -->
                     <div id="new_tool3">
                         <input type="text" name="photo_address3" id="photo_address3" placeholder="图片3路径" />
                         <button type="button" id="change_through3">浏览</button>
                     </div>
                 </td>
-
+                <td>
+                    <input type="checkbox" name="choice" class="choose" />
+                    <input type="hidden" name="hidden" class="hidden" value="0" />
+                </td>
                 <td>
                     <button type="submit">确认</button>
                     <a href="/activity/list"><button type="button">取消</button></a>

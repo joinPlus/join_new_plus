@@ -35,4 +35,13 @@ $(function(){
     $("#change_file3").change(function(){
         $("#photo_address3").val($("#change_file3").val());
     });
+
+    $(".choose").click(function(){
+        if($(".choose").is(":checked")){
+            $(".hidden").val("1");
+        }
+        else{
+            $(".hidden").val("0");
+        }
+    });
 })

@@ -47,10 +47,10 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../../css/base/reset.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common/Title&Sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/widget/Activity.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/widget/Activities.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../../js/Title&Sidebar.js"></script>
-    <script type="text/javascript" src="../../js/Activities.js"></script>
+    <script type="text/javascript" src="../../js/Activity.js"></script>
 </head>
 <body>
 <div id="title">
@@ -93,13 +93,14 @@
 <div id="activity">
     <table id="activities_table">
         <tr>
-            <th style="width: 300px;">序号</th>
-            <th style="width: 300px;">标题</th>
+            <th style="width: 70px;">序号</th>
+            <th style="width: 150px;">标题</th>
             <th style="width: 300px;">内容</th>
             <th style="width: 300px;">图片1</th>
             <th style="width: 300px;">图片2</th>
             <th style="width: 300px;">图片3</th>
-            <th style="width: 200px;">操作</th>
+            <th style="width: 130px;">状态</th>
+            <th style="width: 290px;">操作</th>
         </tr>
         <c:forEach items="${activityList}" var="activity" varStatus="status">
         <tr>
@@ -109,6 +110,7 @@
             <td><img src="${activity.image1}" width="230px" height="180px"/></td>
             <td><img src="${activity.image2}" width="230px" height="180px"/></td>
             <td><img src="${activity.image3}" width="230px" height="180px"/></td>
+            <td>hahaha</td>
             <td>
                 <a href="${website}activity/edit/${activity.id}"><button type="button" id="update" value="修改">修改</button></a>
                 <a href="${website}activity/delete/${activity.id}"><button type="button" id="delete" value="删除">删除</button></a>

@@ -27,14 +27,6 @@ $(function(){
             return false;
         }
     })
-    $("#activities_table tr td:first-child").css({
-        "width":"300px",
-        "text-align":"center"
-    });
-    $("#activities_table tr td:last-child").css({
-        "width":"200px",
-        "text-align":"center"
-    })
 
     //鼠标覆盖事件
     $("#activities_table tr:not(:first)").hover(function(){

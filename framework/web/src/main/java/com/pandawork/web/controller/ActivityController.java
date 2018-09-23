@@ -27,12 +27,11 @@ public class ActivityController extends AbstractController {
     @Autowired
     ActivityService activityService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list")
     public String activityList(Model model) {
         try {
             List<Activity> list = Collections.emptyList();
             list = activityService.listAll();
-            System.out.println(list);
             model.addAttribute("activityList", list);//此即为foreach循环的item
             System.out.println(list);
             return "activityList";
