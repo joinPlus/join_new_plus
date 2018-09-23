@@ -45,8 +45,18 @@ public class BoardController extends AbstractController {
     }
 
     @RequestMapping(value ="/new", method = RequestMethod.POST)
-    public String newBoard(Board board, RedirectAttributes redirectAttributes,Model model) {
+    public String newBoard(@RequestParam("state")String state,Board board, RedirectAttributes redirectAttributes,Model model) {
         try {
+            String stt = new String();
+            System.out.println(state);
+            if(state.equals("1")){
+                stt = "yes";
+            }else if (state.equals("0")){
+                stt = "no";
+            }else{
+                stt = "不是0和1";
+            }
+            board.setState(stt);
             boardService.newBoard(board);
             model.addAttribute("board",board);
             redirectAttributes.addFlashAttribute("message", "添加成功！");
@@ -74,8 +84,18 @@ public class BoardController extends AbstractController {
     }
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    public String updateNews(Board board,@PathVariable("id")int id, Model model){
+    public String updateNews(@RequestParam("state")String state,Board board,@PathVariable("id")int id, Model model){
         try{
+            String stt = new String();
+            System.out.println(state);
+            if(state.equals("1")){
+                stt = "yes";
+            }else if (state.equals("0")){
+                stt = "no";
+            }else{
+                stt = "不是0和1";
+            }
+            board.setState(stt);
             boardService.update(board);
             return "redirect:/board/list";
         }catch(SSException e){

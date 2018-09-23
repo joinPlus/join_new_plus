@@ -59,7 +59,7 @@ public class ActivityController extends AbstractController {
     @RequestMapping(value="/edit",method = RequestMethod.GET)
     public String toUpdate(){return  "activityupdate";}
     @RequestMapping("/add")
-    public String addActivity(Activity activity, HttpSession session, MultipartFile uploadFile1, MultipartFile uploadFile2,MultipartFile uploadFile3,Model model) throws SSException {
+    public String addActivity(@RequestParam("state")String state, Activity activity, HttpSession session, MultipartFile uploadFile1, MultipartFile uploadFile2,MultipartFile uploadFile3,Model model) throws SSException {
         String filename1 = uploadFile1.getOriginalFilename();
         String filename2 = uploadFile2.getOriginalFilename();
         String filename3 = uploadFile3.getOriginalFilename();
@@ -75,6 +75,16 @@ public class ActivityController extends AbstractController {
         activity.setImage2("/images/" + filename2);
         activity.setImage3("/images/" + filename3);
         try {
+            String stt = new String();
+            System.out.println(state);
+            if(state.equals("1")){
+                stt = "yes";
+            }else if (state.equals("0")){
+                stt = "no";
+            }else{
+                stt = "不是0和1";
+            }
+            activity.setState(stt);
             uploadFile1.transferTo(file1);
             uploadFile2.transferTo(file2);
             uploadFile3.transferTo(file3);
@@ -89,7 +99,7 @@ public class ActivityController extends AbstractController {
         return "redirect:/activity/list";
     }
     @RequestMapping(value="/update/{id}", method = RequestMethod.POST)
-    public String updateActivity(@PathVariable("id") int id,Activity activity, HttpSession session, MultipartFile uploadFile1,MultipartFile uploadFile2,MultipartFile uploadFile3, Model model) throws SSException {
+    public String updateActivity(@RequestParam("state")String state,@PathVariable("id") int id,Activity activity, HttpSession session, MultipartFile uploadFile1,MultipartFile uploadFile2,MultipartFile uploadFile3, Model model) throws SSException {
         String filename1 = uploadFile1.getOriginalFilename();
         String filename2 = uploadFile2.getOriginalFilename();
         String filename3 = uploadFile3.getOriginalFilename();
@@ -101,6 +111,16 @@ public class ActivityController extends AbstractController {
         activity.setImage2("/images/"+filename2);
         activity.setImage3("/images/"+filename3);
         try {
+            String stt = new String();
+            System.out.println(state);
+            if(state.equals("1")){
+                stt = "yes";
+            }else if (state.equals("0")){
+                stt = "no";
+            }else{
+                stt = "不是0和1";
+            }
+            activity.setState(stt);
             uploadFile1.transferTo(file1);
             uploadFile2.transferTo(file2);
             uploadFile3.transferTo(file3);

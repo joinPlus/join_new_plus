@@ -70,10 +70,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/base/reset.css" />
     <link rel="stylesheet" href="../../css/common/common1.css" />
-    <link rel="stylesheet" href="../../css/widget/Board_add.css" />
+    <link rel="stylesheet" href="../../css/widget/Board_newadd.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js" ></script>
     <script type="text/javascript" src="../../js/common1.js" ></script>
-    <script type="text/javascript" src="../../js/Board_add.js" ></script>
+    <script type="text/javascript" src="../../js/Board_newadd.js" ></script>
     <title>公告管理修改界面</title>
 </head>
 <body>
@@ -141,6 +141,13 @@
                 <td>内容：</td>
                 <td>
                     <textarea name="content" placeholder="输入公告内容..."></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>
+                    <input type="checkbox" name="chose" class="choose"/>
+                    <input type="hidden" name="state" class="hidden" value="0" />
                 </td>
             </tr>
             <tr>

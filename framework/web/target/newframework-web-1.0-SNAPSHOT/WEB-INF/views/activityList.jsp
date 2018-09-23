@@ -110,7 +110,7 @@
             <td><img src="${activity.image1}" width="230px" height="180px"/></td>
             <td><img src="${activity.image2}" width="230px" height="180px"/></td>
             <td><img src="${activity.image3}" width="230px" height="180px"/></td>
-            <td>hahaha</td>
+            <td>${activity.state}</td>
             <td>
                 <a href="${website}activity/edit/${activity.id}"><button type="button" id="update" value="修改">修改</button></a>
                 <a href="${website}activity/delete/${activity.id}"><button type="button" id="delete" value="删除">删除</button></a>
