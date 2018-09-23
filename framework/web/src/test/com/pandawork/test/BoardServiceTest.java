@@ -18,25 +18,27 @@ public class BoardServiceTest extends AbstractTestCase {
     @Test
     public void testNewBoard() throws SSException{
         Board board=new Board();
-        board.setContent("你好");
+        board.setContent("你好???");
         board.setYear(1999);
         board.setMonth(1);
         board.setDay(27);
+        board.setState("1");
         boardService.newBoard(board);
     }
     @Test
     public  void testDelById() throws SSException{
 
-        boardService.delById(3);
+        boardService.delById(5);
     }
     @Test
     public void testUpdate() throws SSException{
         Board board=new Board();
-        board.setId(5);
+        board.setId(6);
         board.setYear(2018);
         board.setMonth(9);
         board.setDay(9);
         board.setContent("感谢你");
+        board.setState("1");
         boardService.update(board);
     }
     @Test
@@ -46,7 +48,7 @@ public class BoardServiceTest extends AbstractTestCase {
     }
     @Test
     public  void testQueryById() throws SSException{
-        Board board=boardService.queryById(4);
+        Board board=boardService.queryById(6);
         System.out.println(board.toString());
     }
 }

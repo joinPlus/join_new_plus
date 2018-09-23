@@ -32,7 +32,9 @@ public class ActivityController extends AbstractController {
         try {
             List<Activity> list = Collections.emptyList();
             list = activityService.listAll();
+            System.out.println(list);
             model.addAttribute("activityList", list);//此即为foreach循环的item
+            System.out.println(list);
             return "activityList";
         } catch (SSException e) {
             LogClerk.errLog.error(e);
@@ -53,38 +55,65 @@ public class ActivityController extends AbstractController {
     public String toNewActivity1() {
         return "boardmore";
     }
-
+    @RequestMapping(value="/toAdd",method = RequestMethod.GET)
+    public String toAdd(){return  "activityadd";}
+    @RequestMapping(value="/edit",method = RequestMethod.GET)
+    public String toUpdate(){return  "activityupdate";}
     @RequestMapping("/add")
-    public String addActivity(Activity activity, HttpSession session, MultipartFile uploadFile, Model model) throws SSException {
-        String filename = uploadFile.getOriginalFilename();
+    public String addActivity(Activity activity, HttpSession session, MultipartFile uploadFile1, MultipartFile uploadFile2,MultipartFile uploadFile3,Model model) throws SSException {
+        String filename1 = uploadFile1.getOriginalFilename();
+        String filename2 = uploadFile2.getOriginalFilename();
+        String filename3 = uploadFile3.getOriginalFilename();
+
         String leftPath = session.getServletContext().getRealPath("images");
-        File file = new File(leftPath, filename);
-        activity.setImage("/images/" + filename);
+
+        File file1 = new File(leftPath, filename1);
+        File file2 = new File(leftPath, filename2);
+        File file3 = new File(leftPath, filename3);
+
+
+        activity.setImage1("/images/" + filename1);
+        activity.setImage2("/images/" + filename2);
+        activity.setImage3("/images/" + filename3);
         try {
-            uploadFile.transferTo(file);
+            uploadFile1.transferTo(file1);
+            uploadFile2.transferTo(file2);
+            uploadFile3.transferTo(file3);
         } catch (Exception e) {
             System.out.println("文件保存出错");
             e.printStackTrace();
         }
         activityService.newActivity(activity);
-        model.addAttribute("image", activity.getImage());
+        model.addAttribute("image1", activity.getImage1());
+        model.addAttribute("image2", activity.getImage2());
+        model.addAttribute("image3", activity.getImage3());
         return "redirect:/activity/list";
     }
     @RequestMapping(value="/update/{id}", method = RequestMethod.POST)
-    public String updateActivity(@PathVariable("id") int id,Activity activity, HttpSession session, MultipartFile uploadFile, Model model) throws SSException {
-        String filename = uploadFile.getOriginalFilename();
+    public String updateActivity(@PathVariable("id") int id,Activity activity, HttpSession session, MultipartFile uploadFile1,MultipartFile uploadFile2,MultipartFile uploadFile3, Model model) throws SSException {
+        String filename1 = uploadFile1.getOriginalFilename();
+        String filename2 = uploadFile2.getOriginalFilename();
+        String filename3 = uploadFile3.getOriginalFilename();
         String leftPath = session.getServletContext().getRealPath("images");
-        File file = new File(leftPath,filename);
-        activity.setImage("/images/"+filename);
+        File file1 = new File(leftPath,filename1);
+        File file2 = new File(leftPath,filename2);
+        File file3 = new File(leftPath,filename3);
+        activity.setImage1("/images/"+filename1);
+        activity.setImage2("/images/"+filename2);
+        activity.setImage3("/images/"+filename3);
         try {
-            uploadFile.transferTo(file);
+            uploadFile1.transferTo(file1);
+            uploadFile2.transferTo(file2);
+            uploadFile3.transferTo(file3);
         }
         catch (Exception e){
             System.out.println("文件保存出错");
             e.printStackTrace();
         }
         activityService.update(activity);
-        model.addAttribute("image",activity.getImage());
+        model.addAttribute("image1",activity.getImage1());
+        model.addAttribute("image2",activity.getImage2());
+        model.addAttribute("image3",activity.getImage3());
         return "redirect:/activity/list";
     }
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)

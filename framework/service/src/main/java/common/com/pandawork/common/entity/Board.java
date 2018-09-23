@@ -1,6 +1,7 @@
 package com.pandawork.common.entity;
 
 import com.pandawork.core.common.entity.AbstractEntity;
+import org.springframework.stereotype.Controller;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +21,8 @@ public class Board extends AbstractEntity{
     private int month;
     @Column(name ="day")
     private  int day;
+    @Column(name="state")
+    private String state;
     public Board() {
     }
 
@@ -64,6 +67,14 @@ public class Board extends AbstractEntity{
         this.day = day;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         return "Board{" +
@@ -72,6 +83,7 @@ public class Board extends AbstractEntity{
                 ", year=" + year +
                 ", month=" + month +
                 ", day=" + day +
+                ", state='" + state + '\'' +
                 '}';
     }
 }

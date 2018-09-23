@@ -61,7 +61,7 @@
         <ul>
             <li id="head_img">
                 <a href="">
-                    <img src="../../resource/img/ensure.png" width="35px" height="35px" />
+                    <img src="../../img/ensure.png" width="35px" height="35px" />
                     <span>haha,欢迎您</span>
                 </a>
             </li>
@@ -96,7 +96,9 @@
             <th style="width: 300px;">序号</th>
             <th style="width: 300px;">标题</th>
             <th style="width: 300px;">内容</th>
-            <th style="width: 300px;">图片</th>
+            <th style="width: 300px;">图片1</th>
+            <th style="width: 300px;">图片2</th>
+            <th style="width: 300px;">图片3</th>
             <th style="width: 200px;">操作</th>
         </tr>
         <c:forEach items="${activityList}" var="activity" varStatus="status">
@@ -104,7 +106,9 @@
             <td>${status.index+1}</td>
             <td>${activity.title}</td>
             <td>${activity.content}</td>
-            <td><img src="${activity.image}" width="230px" height="180px"/></td>
+            <td><img src="${activity.image1}" width="230px" height="180px"/></td>
+            <td><img src="${activity.image2}" width="230px" height="180px"/></td>
+            <td><img src="${activity.image3}" width="230px" height="180px"/></td>
             <td>
                 <a href="${website}activity/edit/${activity.id}"><button type="button" id="update" value="修改">修改</button></a>
                 <a href="${website}activity/delete/${activity.id}"><button type="button" id="delete" value="删除">删除</button></a>

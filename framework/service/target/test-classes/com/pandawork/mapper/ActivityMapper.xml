@@ -7,7 +7,10 @@
         <id property="id" column="id"/>
         <result property="content" column="content"/>
         <result property="title" column="title"/>
-        <result property="image" column="image"/>
+        <result property="image1" column="image1"/>
+        <result property="image2" column="image2"/>
+        <result property="image3" column="image3"/>
+        <result property="state" column="state"/>
     </resultMap>
 
     <select id="queryById" resultMap="activity" >
@@ -18,15 +21,18 @@
 
     <insert id="newActivity">
         INSERT INTO `t_activity`
-        (`content`,`title`,`image`)
-        VALUES ( #{activity.content},#{activity.title},#{activity.image})
+        (`content`,`title`,`image1`,`image2`,`image3`,`state`)
+        VALUES ( #{activity.content},#{activity.title},#{activity.image1},#{activity.image2},#{activity.image3},#{activity.state})
     </insert>
 
     <update id="update">
         UPDATE `t_activity`
         SET `content` = #{activity.content},
         `title` = #{activity.title},
-        `image` = #{activity.image}
+        `image1` = #{activity.image1},
+        `image2` = #{activity.image2},
+        `image3` = #{activity.image3},
+        `state` = #{activity.state}
         WHERE `id` = #{activity.id}
     </update>
 

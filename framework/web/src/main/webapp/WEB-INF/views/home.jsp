@@ -32,26 +32,14 @@
             <div class="button_inner" id="btn1">
                 <button id="network" type="button">内网</button>
             </div>
-            <form class="button_inner" action="/board/query/${keyword}" method="get">
-                <table>
-                    <tr>
-                        <td>
-                            <input id="input" type="text"  name="keyword" placeholder="请输入要搜索的内容">
-                        </td>
-                        <td>
-                            <button id="search" type="submit">搜索</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <%--<div class="button_inner" >--%>
-                <%--<div class="search_bar_inner" id="input_block">--%>
-                    <%--<input id="input" type="text"  placeholder="请输入要搜索的内容">--%>
-                <%--</div>--%>
-                <%--<div class="search_bar_inner" id="btn2">--%>
-                    <%--<a href="/board/query/${keyword}"><button id="search" type="button">搜索</button></a>--%>
-                <%--</div>--%>
-            <%--</div>--%>
+            <div class="button_inner">
+                <div class="search_bar_inner" id="input_block">
+                    <input id="input" type="text" placeholder="请输入要搜索的内容">
+                </div>
+                <div class="search_bar_inner" id="btn2">
+                    <button id="search" type="button">搜索</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="nav">
@@ -65,9 +53,9 @@
             <li class="mainmenu">
                 <a class="link" href="">部门介绍</a>
                 <dl>
-                    <dd> <a href="/user/show1">产品部</a></dd>
-                    <dd> <a href="/user/show2">前端部</a></dd>
-                    <dd> <a href="/user/show3">后端部</a></dd>
+                    <dd> <a href="">产品部</a></dd>
+                    <dd> <a href="">前端部</a></dd>
+                    <dd> <a href="">后端部</a></dd>
                 </dl>
             </li>
             <li class="mainmenu">
@@ -94,9 +82,7 @@
             </ul>
             <!---轮播图---->
             <div class="carousal-img">
-                <img src="../../img/page/滚动1_u0.jpg" />
-                <img src="../../img/page/滚动2_u2.jpg" />
-                <img src="../../img/page/滚动1_u0.jpg" />
+                <img src="" />
             </div>
             <!--左右的点击前进后退按键---->
             <div class="btn" id="left">&lt;</div>
@@ -107,39 +93,14 @@
             <div class="level_main">
                 <div class="theme"><span>公告</span></div>
                 <div class="more">
-                    <span>更多</span><a href="${websites}/activity/toBoardmore"><img src="../../img/page/u91.png"></a>
+                    <span>更多</span><a href="/activity/toBoardmore"><img src="../../img/page/u91.png"></a>
                 </div>
             </div>
             <div class="level_detail">
                 <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day">25</p></div>
-                    <div class="annnounce_right"><p class="announce_month">07月</p><p class="announce_year">2018</p></div>
-                    <span>大家要好好学一下呀1</span>
-                </div>
-                <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day">25</p></div>
-                    <div class="annnounce_right"><p class="announce_month">07月</p><p class="announce_year">2018</p></div>
-                    <span>大家要好好学一下呀3</span>
-                </div>
-                <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day">24</p></div>
-                    <div class="annnounce_right"><p class="announce_month">07月</p><p class="announce_year">2018</p></div>
-                    <span>大家要好好学一下呀2</span>
-                </div>
-                <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day">24</p></div>
-                    <div class="annnounce_right"><p class="announce_month">07月</p><p class="announce_year">2018</p></div>
-                    <span>大家要好好学一下呀4</span>
-                </div>
-                <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day">22</p></div>
-                    <div class="annnounce_right"><p class="announce_month">07月</p><p class="announce_year">2018</p></div>
-                    <span>大家要好好学一下呀5</span>
-                </div>
-                <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day">22</p></div>
-                    <div class="annnounce_right"><p class="announce_month">07月</p><p class="announce_year">2018</p></div>
-                    <span>大家要好好学一下呀6</span>
+                    <div class="annnounce_left"><p class="announce_day"></p></div>
+                    <div class="annnounce_right"><p class="announce_month"></p><p class="announce_year"></p></div>
+                    <span></span>
                 </div>
             </div>
         </div>
@@ -148,22 +109,20 @@
             <div class="level_main">
                 <div class="theme"><span>活动</span></div>
                 <div class="more">
-                    <span>更多</span><a href="${websites}/activity/toActivitymore"><img src="../../img/page/u91.png"></a>
+                    <span>更多</span><a href="/activity/toActivitymore"><img src="../../img/page/u91.png"></a>
                 </div>
             </div>
             <div class="level_detail">
                 <div id="activities_detail">
                     <img src="../../img/page/u75.png" >
                     <div id="activities_words">
-                        <p id="word_h">一次与动植物园的约会</p>
-                        <p id="word_p"> 5月26日，卓音工作室在动人的动植物公园进行了一次春游活动。活动中主要进行了刺激好玩的游戏环节，通过春游，大家之间更加熟悉起来，更像一家人了。</p>
+                        <p id="word_h"></p>
+                        <p id="word_p"></p>
                     </div>
                     <img src="../../img/page/u75.png" >
                 </div>
                 <div id="activities_img">
-                    <img src="../../img/page/u83.jpg">
-                    <img src="../../img/page/u85.jpg">
-                    <img src="../../img/page/u87.jpg">
+                    <img src="">
                 </div>
             </div>
         </div>
@@ -174,28 +133,8 @@
             </div>
             <div class="level_detail">
                 <div class="mien_detail">
-                    <div class="mien_h">纳新活动</div>
-                    <div class="mien_img"><img src="../../img/page/1_u25.png"></div>
-                </div>
-                <div class="mien_detail">
-                    <div class="mien_h">卓音理念</div>
-                    <div class="mien_img"><img src="../../img/page/2_u27.png"></div>
-                </div>
-                <div class="mien_detail">
-                    <div class="mien_h">工作室环境1</div>
-                    <div class="mien_img"><img src="../../img/page/3_u29.png"></div>
-                </div>
-                <div class="mien_detail">
-                    <div class="mien_h">召开会议</div>
-                    <div class="mien_img"><img src="../../img/page/4_u31.png"></div>
-                </div>
-                <div class="mien_detail">
-                    <div class="mien_h">工作室环境2</div>
-                    <div class="mien_img"><img src="../../img/page/5_u33.png"></div>
-                </div>
-                <div class="mien_detail">
-                    <div class="mien_h">合影留念</div>
-                    <div class="mien_img"><img src="../../img/page/6_u35.png"></div>
+                    <div class="mien_h"></div>
+                    <div class="mien_img"><img src=""></div>
                 </div>
             </div>
         </div>

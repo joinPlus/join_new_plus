@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/widget/Activities_change.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../../js/Title&Sidebar.js"></script>
-    <script type="text/javascript" src="../../js/Activities_change.js"></script>
+    <script type="text/javascript" src="../../js/Activities_Change.js"></script>
 </head>
 <body>
 <div id="title">
@@ -79,7 +79,9 @@
             <tr>
                 <th>标题</th>
                 <th>活动内容</th>
-                <th>图片</th>
+                <th>图片1</th>
+                <th>图片2</th>
+                <th>图片3</th>
                 <th style="width: 250px;">操作</th>
             </tr>
             <tr>
@@ -91,14 +93,33 @@
                 </td>
                 <td>
                     <%--<img src="../../resource/img/ensure.png" width="230px" height="180px" />--%>
-                    <img src="${activity.image}" width="118px" height="165.2px" />
-                    <input type="file" name="uploadFile" id="change_file" /><!-- 被隐藏 -->
+                    <img src="${activity.image1}" width="118px" height="165.2px" />
+                    <input type="file" name="uploadFile1" id="change_file1" style="display: none"/><!-- 被隐藏 -->
+                        <div id="new_tool1">
+                            <input type="text" name="photo_address1" id="photo_address1" placeholder="图片1路径" />
+                            <button type="button" id="change_through1">更换图片</button>
+                        </div>
                 </td>
                 <td>
-                    <div id="new_tool">
-                        <input type="text" name="photo_address" id="photo_address" placeholder="图片路径" />
-                        <button type="button" id="change_through">更换图片</button>
-                    </div>
+                    <%--<img src="../../resource/img/ensure.png" width="230px" height="180px" />--%>
+                    <img src="${activity.image2}" width="118px" height="165.2px" />
+                    <input type="file" name="uploadFile2" id="change_file2" style="display: none"/><!-- 被隐藏 -->
+                        <div id="new_tool2">
+                            <input type="text" name="photo_address2" id="photo_address2" placeholder="图片2路径" />
+                            <button type="button" id="change_through2">更换图片</button>
+                        </div>
+                </td>
+                <td>
+                    <%--<img src="../../resource/img/ensure.png" width="230px" height="180px" />--%>
+                    <img src="${activity.image3}" width="118px" height="165.2px" />
+                    <input type="file" name="uploadFile3" id="change_file3" style="display: none"/><!-- 被隐藏 -->
+                        <div id="new_tool3">
+                            <input type="text" name="photo_address3" id="photo_address3" placeholder="图片3路径" />
+                            <button type="button" id="change_through3">更换图片</button>
+                        </div>
+                </td>
+                <td>
+
                     <button type="submit">确认</button>
                     <a href="/activity/list"><button type="button">取消</button></a>
                 </td>

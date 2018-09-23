@@ -42,7 +42,7 @@ public class ActivityServiceImpl implements ActivityService{
         }
         Assert.isNotNull(activity.getContent(), NFException.BirthdayNotNull);
         Assert.isNotNull(activity.getTitle(), NFException.CollegeNotNull);
-        Assert.isNotNull(activity.getImage(), NFException.CollegeNotNull);
+        Assert.isNotNull(activity.getImage1(), NFException.CollegeNotNull);
         try {
             activityMapper.newActivity(activity);
         } catch (Exception e) {

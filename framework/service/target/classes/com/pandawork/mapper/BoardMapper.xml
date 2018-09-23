@@ -9,6 +9,8 @@
         <result property="year" column="year"/>
         <result property="month" column="month"/>
         <result property="day" column="day"/>
+        <result property="state" column="state"/>
+
     </resultMap>
 
     <select id="queryById" resultMap="board" >
@@ -26,8 +28,8 @@
 
     <insert id="newBoard">
         INSERT INTO `t_board_out`
-        (`content`,`year`,`month`,`day`)
-        VALUES ( #{board.content},#{board.year},#{board.month},#{board.day})
+        (`content`,`year`,`month`,`day`,`state`)
+        VALUES ( #{board.content},#{board.year},#{board.month},#{board.day},#{board.state})
     </insert>
 
     <update id="update">
@@ -36,6 +38,7 @@
         `content` = #{board.content},
         `year` = #{board.year},
         `month` = #{board.month},
+        `state` = #{board.state},
         `day` = #{board.day}
         WHERE `id` = #{board.id}
     </update>

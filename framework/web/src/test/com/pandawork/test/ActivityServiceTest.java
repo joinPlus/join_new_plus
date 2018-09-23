@@ -5,7 +5,6 @@ import com.pandawork.core.common.exception.SSException;
 import com.pandawork.service.ActivityService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.Date;
 
 public class ActivityServiceTest  extends  AbstractTestCase{
@@ -20,28 +19,33 @@ public class ActivityServiceTest  extends  AbstractTestCase{
     public void testNewActivity() throws SSException{
         Activity activity=new Activity();
         activity.setContent("233");
-        activity.setImage("111");
-        activity.setTitle("666");
+        activity.setImage1("111");
+        activity.setImage2("222");
+        activity.setImage3("333");
+        activity.setTitle("688");
+        activity.setState("1");
         activityService.newActivity(activity);
     }
     @Test
     public  void testDelById() throws SSException{
 
-        activityService.delById(2);
+        activityService.delById(13);
     }
     @Test
     public void testUpdate() throws SSException{
         Activity activity=new Activity();
-        activity.setId(1);
+        activity.setId(12);
         activity.setTitle("哈");
-        activity.setImage("0");
+        activity.setImage1("0");
+        activity.setImage2("1");
+        activity.setImage3("2");
         activity.setContent("6");
         activityService.update(activity);
 
     }
     @Test
     public  void testQueryById() throws SSException{
-        Activity activity=activityService.queryById(3);
+        Activity activity=activityService.queryById(12);
         System.out.println(activity.toString());
     }
 
