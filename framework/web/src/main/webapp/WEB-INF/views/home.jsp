@@ -32,14 +32,26 @@
             <div class="button_inner" id="btn1">
                 <button id="network" type="button">内网</button>
             </div>
-            <div class="button_inner">
-                <div class="search_bar_inner" id="input_block">
-                    <input id="input" type="text" placeholder="请输入要搜索的内容">
-                </div>
-                <div class="search_bar_inner" id="btn2">
-                    <button id="search" type="button">搜索</button>
-                </div>
-            </div>
+            <form class="button_inner" action="/board/query/${keyword}" method="get">
+                <table>
+                    <tr>
+                        <td>
+                            <input id="input" type="text"  name="keyword" placeholder="请输入要搜索的内容">
+                        </td>
+                        <td>
+                            <button id="search" type="submit">搜索</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <%--<div class="button_inner" >--%>
+                <%--<div class="search_bar_inner" id="input_block">--%>
+                    <%--<input id="input" type="text"  placeholder="请输入要搜索的内容">--%>
+                <%--</div>--%>
+                <%--<div class="search_bar_inner" id="btn2">--%>
+                    <%--<a href="/board/query/${keyword}"><button id="search" type="button">搜索</button></a>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </div>
     </div>
     <div class="nav">
@@ -95,7 +107,7 @@
             <div class="level_main">
                 <div class="theme"><span>公告</span></div>
                 <div class="more">
-                    <span>更多</span><a href="#"><img src="../../img/page/u91.png"></a>
+                    <span>更多</span><a href="${websites}/activity/toBoardmore"><img src="../../img/page/u91.png"></a>
                 </div>
             </div>
             <div class="level_detail">
@@ -136,7 +148,7 @@
             <div class="level_main">
                 <div class="theme"><span>活动</span></div>
                 <div class="more">
-                    <span>更多</span><a href="#"><img src="../../img/page/u91.png"></a>
+                    <span>更多</span><a href="${websites}/activity/toActivitymore"><img src="../../img/page/u91.png"></a>
                 </div>
             </div>
             <div class="level_detail">

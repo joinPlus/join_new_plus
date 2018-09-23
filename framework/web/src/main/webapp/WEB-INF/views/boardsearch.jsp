@@ -34,6 +34,6 @@
         </c:forEach>
     </form>
 </table>
-<button><a href="${website}/board/list">返回公告主页面</a></button>
+<button><a href="${website}/activity/toHome">返回主页面</a></button>
 </body>
 </html>

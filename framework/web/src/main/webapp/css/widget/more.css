@@ -1,0 +1,14 @@
+/*------more页面-----*/
+#announce_more{
+    padding: 3% 16%;
+}
+#activities_more{
+    padding: 3% 16%;
+}
+
+div.level_detail:nth-child(2){
+    margin-top:12%;
+}
+div.level_detail:nth-child(3){
+    margin-top:12%;
+}

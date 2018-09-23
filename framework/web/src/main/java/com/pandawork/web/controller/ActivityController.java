@@ -45,9 +45,13 @@ public class ActivityController extends AbstractController {
     public String toHomePage() {
         return "home";
     }
-    @RequestMapping(value = "/toAdd", method = RequestMethod.GET)
+    @RequestMapping(value = "/toActivitymore", method = RequestMethod.GET)
+    public String toActivitymore() {
+        return "activitymore";
+    }
+    @RequestMapping(value = "/toBoardmore", method = RequestMethod.GET)
     public String toNewActivity1() {
-        return "activityadd";
+        return "boardmore";
     }
 
     @RequestMapping("/add")
