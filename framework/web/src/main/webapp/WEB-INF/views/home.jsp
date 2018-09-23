@@ -82,7 +82,13 @@
             </ul>
             <!---轮播图---->
             <div class="carousal-img">
-                <img src="" />
+                <c:forEach items="${lunboList2}"  var="lunbo" varStatus="status">
+                    <c:choose>
+                        <c:when test = "${lunbo.status == 'Yes'}">
+                            <img src="${lunbo.path}">
+                        </c:when>
+                    </c:choose>
+                </c:forEach>
             </div>
             <!--左右的点击前进后退按键---->
             <div class="btn" id="left">&lt;</div>
@@ -93,14 +99,14 @@
             <div class="level_main">
                 <div class="theme"><span>公告</span></div>
                 <div class="more">
-                    <span>更多</span><a href="/activity/toBoardmore"><img src="../../img/page/u91.png"></a>
+                    <span>更多</span><a href="announce_more.html"><img src="../../img/page/u91.png"></a>
                 </div>
             </div>
             <div class="level_detail">
                 <div class="announce_detail">
-                    <div class="annnounce_left"><p class="announce_day"></p></div>
-                    <div class="annnounce_right"><p class="announce_month"></p><p class="announce_year"></p></div>
-                    <span></span>
+                    <div class="annnounce_left"><p class="announce_day">${board.day}</p></div>
+                    <div class="annnounce_right"><p class="announce_month">${board.month}</p><p class="announce_year">${board.year}</p></div>
+                    <span>${board.content}</span>
                 </div>
             </div>
         </div>
@@ -109,22 +115,30 @@
             <div class="level_main">
                 <div class="theme"><span>活动</span></div>
                 <div class="more">
-                    <span>更多</span><a href="/activity/toActivitymore"><img src="../../img/page/u91.png"></a>
+                    <span>更多</span><a href="activity_more.html"><img src="../../img/page/u91.png"></a>
                 </div>
             </div>
+<c:forEach items="${activityList}"  var="activity" varStatus="status">
+    <c:choose>
+        <c:when test = "${activity.state == 'yes'}">
             <div class="level_detail">
                 <div id="activities_detail">
                     <img src="../../img/page/u75.png" >
                     <div id="activities_words">
-                        <p id="word_h"></p>
-                        <p id="word_p"></p>
+                        <p id="word_h">${activity.title}</p>
+                        <p id="word_p">${activity.content}</p>
                     </div>
                     <img src="../../img/page/u75.png" >
                 </div>
                 <div id="activities_img">
-                    <img src="">
+                    <img src="${activity.image1}">
+                    <img src="${activity.image2}">
+                    <img src="${activity.image3}">
                 </div>
             </div>
+        </c:when>
+    </c:choose>
+</c:forEach>
         </div>
         <!-------卓音风采-------->
         <div id="title_mien">
@@ -132,10 +146,16 @@
                 <div class="theme"><span>卓新风采</span></div>
             </div>
             <div class="level_detail">
-                <div class="mien_detail">
-                    <div class="mien_h"></div>
-                    <div class="mien_img"><img src=""></div>
-                </div>
+                <c:forEach items="${beautyList2}"  var="beauty" varStatus="status">
+                    <c:choose>
+                        <c:when test = "${beauty.status == 'Yes'}">
+                            <div class="mien_detail">
+                                <div class="mien_h">${beauty.name}</div>
+                                <div class="mien_img"><img src="${beauty.path}"></div>
+                            </div>
+                        </c:when>
+                    </c:choose>
+                </c:forEach>
             </div>
         </div>
     </div>

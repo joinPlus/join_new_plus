@@ -1,7 +1,13 @@
 package com.pandawork.web.controller;
 
 import com.pandawork.common.entity.Activity;
+import com.pandawork.common.entity.Board;
+import com.pandawork.common.entity.beauty.Beauty;
+import com.pandawork.common.entity.lunbo.Lunbo;
 import com.pandawork.service.ActivityService;
+import com.pandawork.service.BoardService;
+import com.pandawork.service.BeautyService;
+import com.pandawork.service.LunboService;
 import com.pandawork.core.common.exception.SSException;
 import com.pandawork.core.common.log.LogClerk;
 import com.pandawork.core.common.util.Assert;
@@ -27,6 +33,14 @@ public class ActivityController extends AbstractController {
     @Autowired
     ActivityService activityService;
 
+    @Autowired
+    BoardService boardService;
+
+    @Autowired
+    BeautyService beautyService;
+
+    @Autowired
+    LunboService lunboService;
     @RequestMapping(value = "/list")
     public String activityList(Model model) {
         try {
@@ -36,6 +50,35 @@ public class ActivityController extends AbstractController {
             System.out.println(list);
             return "activityList";
         } catch (SSException e) {
+            LogClerk.errLog.error(e);
+            sendErrMsg(e.getMessage());
+            return ADMIN_SYS_ERR_PAGE;
+        }
+    }
+    @RequestMapping(value="/list2")
+    public String AllList(Model model){
+        try{
+            List<Activity> list1 = Collections.emptyList();
+            list1 = activityService.listAll();
+            model.addAttribute("activityList", list1);//此即为foreach循环的item
+            System.out.println(list1);
+
+            List<Board> list2=Collections.emptyList();
+            list2=boardService.listAll();
+            model.addAttribute("boardList",list2);
+            System.out.println(list2);
+
+            List<Beauty>list3=Collections.emptyList();
+            list3=beautyService.listAllBeauty();
+            model.addAttribute("beautyList2",list3);
+            System.out.println(list3);
+
+            List<Lunbo>list4=Collections.emptyList();
+            list4=lunboService.listAllLunbo();
+            model.addAttribute("lunboList2",list4);
+            System.out.println(list4);
+            return "home";
+        }catch (SSException e) {
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());
             return ADMIN_SYS_ERR_PAGE;
