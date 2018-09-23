@@ -51,10 +51,10 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../css/base/reset.css" />
     <link rel="stylesheet" href="../../css/common/common1.css" />
-    <link rel="stylesheet" href="../../css/widget/Board1.css" />
+    <link rel="stylesheet" href="../../css/widget/Boardnew1.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js" ></script>
     <script type="text/javascript" src="../../js/common1.js" ></script>
-    <script type="text/javascript" src="../../js/Board.js" ></script>
+    <script type="text/javascript" src="../../js/Boardnew.js" ></script>
     <title>公告管理</title>
 </head>
 <body>
@@ -105,6 +105,7 @@
             <th>月</th>
             <th>日</th>
             <th>内容</th>
+            <th>状态</th>
             <th>操作</th>
         </tr>
         <c:forEach items="${boardList}" var="board" varStatus="status">
@@ -114,6 +115,7 @@
                 <td>${board.month}</td>
                 <td>${board.day}</td>
                 <td>${board.content}</td>
+                <td>${board.state}</td>
                 <td>
                     <a title="删除" href="${website}board/delete/${board.id}"><img src="../../img/delete.png" class="deletePic" /></a>
                     <a title="修改" href="${website}board/edit/${board.id}"><img src="../../img/update.png"  class="updatePic"/></a>

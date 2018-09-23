@@ -74,47 +74,6 @@
             </div>
             <div id="activities_img12">
                 <img src="../../img/page/u83.jpg">
-                <img src="../../img/page/u85.jpg">
-                <img src="../../img/page/u87.jpg">
-                <img src="../../img/page/u83.jpg">
-                <img src="../../img/page/u85.jpg">
-                <img src="../../img/page/u87.jpg">
-            </div>
-        </div>
-        <div class="level_detail">
-            <div id="activities_detail1">
-                <img src="../../img/page/u75.png" >
-                <div id="activities_words1">
-                    <p id="word_h1">一次与动植物园的约会</p>
-                    <p id="word_p1"> 5月26日，卓音工作室在动人的动植物公园进行了一次春游活动。活动中主要进行了刺激好玩的游戏环节，通过春游，大家之间更加熟悉起来，更像一家人了。</p>
-                </div>
-                <img src="../../img/page/u75.png" >
-            </div>
-            <div id="activities_img1">
-                <img src="../../img/page/u83.jpg">
-                <img src="../../img/page/u85.jpg">
-                <img src="../../img/page/u87.jpg">
-                <img src="../../img/page/u83.jpg">
-                <img src="../../img/page/u85.jpg">
-                <img src="../../img/page/u87.jpg">
-            </div>
-        </div>
-        <div class="level_detail">
-            <div id="activities_detail">
-                <img src="../../img/page/u75.png" >
-                <div id="activities_words">
-                    <p id="word_h">一次与动植物园的约会</p>
-                    <p id="word_p"> 5月26日，卓音工作室在动人的动植物公园进行了一次春游活动。活动中主要进行了刺激好玩的游戏环节，通过春游，大家之间更加熟悉起来，更像一家人了。</p>
-                </div>
-                <img src="../../img/page/u75.png" >
-            </div>
-            <div id="activities_img">
-                <img src="../../img/page/u83.jpg">
-                <img src="../../img/page/u85.jpg">
-                <img src="../../img/page/u87.jpg">
-                <img src="../../img/page/u83.jpg">
-                <img src="../../img/page/u85.jpg">
-                <img src="../../img/page/u87.jpg">
             </div>
         </div>
     </div>

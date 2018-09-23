@@ -102,7 +102,7 @@
                 </td>
                 <td>
                     <input type="checkbox" name="choice" class="choose" />
-                    <input type="hidden" name="hidden" class="hidden" value="0" />
+                    <input type="hidden" name="state" class="hidden" value="0" />
                 </td>
                 <td>
                     <button type="submit">确认</button>

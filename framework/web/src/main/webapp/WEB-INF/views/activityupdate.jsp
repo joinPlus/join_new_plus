@@ -91,10 +91,8 @@
                 </td>
                 <td>
                     <textarea name="content" cols="25" rows="7">${activity.content}</textarea>
-                    <%--<input type="text"  name="content" value="${activity.content}"/>--%>
                 </td>
                 <td style=" height: 250px;">
-                    <%--<img src="../../resource/img/ensure.png" width="200px" height="150px" />--%>
                     <img src="${activity.image1}" width="230px" height="180px" />
                     <input type="file" name="uploadFile1" id="change_file1" style="display: none"/><!-- 被隐藏 -->
                         <div id="new_tool1">
@@ -103,7 +101,6 @@
                         </div>
                 </td>
                 <td>
-                    <%--<img src="../../resource/img/ensure.png" width="200px" height="150px" />--%>
                     <img src="${activity.image2}" width="230px" height="180px" />
                     <input type="file" name="uploadFile2" id="change_file2" style="display: none"/><!-- 被隐藏 -->
                         <div id="new_tool2">
@@ -112,7 +109,6 @@
                         </div>
                 </td>
                 <td>
-                    <%--<img src="../../resource/img/ensure.png" width="200px" height="150px" />--%>
                     <img src="${activity.image3}" width="230px" height="180px" />
                     <input type="file" name="uploadFile3" id="change_file3" style="display: none"/><!-- 被隐藏 -->
                         <div id="new_tool3">
@@ -122,7 +118,7 @@
                 </td>
                 <td>
                     <input type="checkbox" name="choice" class="choose" />
-                    <input type="hidden" name="hidden" class="hidden" value="0" />
+                    <input type="hidden" name="state" class="hidden" value="0" />
                 </td>
                 <td>
 

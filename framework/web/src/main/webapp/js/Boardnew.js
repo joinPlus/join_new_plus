@@ -24,4 +24,13 @@ $(function(){
             "background-color":"rgb(78,84,101)"
         });
     });
+    $("#sidebar ul li:nth-child(3) a").hover(function(){
+        $(this).css({
+            "background-color":"rgb(78,84,101)"
+        });
+    },function(){
+        $(this).css({
+            "background-color":"rgb(78,84,101)"
+        });
+    });
 })
