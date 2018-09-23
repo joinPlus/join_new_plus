@@ -28,7 +28,7 @@
 <a href="/activity/list">点击进入活动界面</a>
 <a href="/project/list">点击进入内网界面</a>
 <a href="/TongGao/getall">点击进入通告页面</a>
-<a href="/activity/toHome">点击进入官网首页页面</a>
+<a href="/activity/list2">点击进入官网首页页面</a>
 </body>
 
 </html>

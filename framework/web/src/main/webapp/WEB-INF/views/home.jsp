@@ -95,6 +95,9 @@
             <div class="btn" id="right">&gt;</div>
         </div>
         <!-------公告-------->
+<c:forEach items="${boardList}"  var="board" varStatus="status">
+    <c:choose>
+        <c:when test = "${board.state == 'yes'}">
         <div id="title_announce">
             <div class="level_main">
                 <div class="theme"><span>公告</span></div>
@@ -110,6 +113,9 @@
                 </div>
             </div>
         </div>
+        </c:when>
+    </c:choose>
+</c:forEach>
         <!-------活动-------->
         <div id="title_activities">
             <div class="level_main">
