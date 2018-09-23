@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
@@ -38,7 +39,7 @@ public class BeautyController extends AbstractController{
             list = beautyService.listAllBeauty();
             //此即为foreach循环的item
             model.addAttribute("beautyList", list);
-            return "home";
+            return "home_beauty";
         } catch (SSException e) {
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());
@@ -46,6 +47,20 @@ public class BeautyController extends AbstractController{
         }
     }
 
+    @RequestMapping(value = "/list2", method = RequestMethod.GET)
+    public String beautyList2(Model model) {
+        try {
+            List<Beauty> list = Collections.emptyList();
+            list = beautyService.listAllBeauty();
+            //此即为foreach循环的item
+            model.addAttribute("beautyList2", list);
+            return "TestHomeLLL";
+        } catch (SSException e) {
+            LogClerk.errLog.error(e);
+            sendErrMsg(e.getMessage());
+            return ADMIN_SYS_ERR_PAGE;
+        }
+    }
     @RequestMapping("/add")
     public String addBeauty(Beauty beauty, HttpSession session, MultipartFile uploadFile) throws SSException {
         String filename = uploadFile.getOriginalFilename();
@@ -90,14 +105,25 @@ public class BeautyController extends AbstractController{
     }
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    public String update(Beauty beauty ,@PathVariable("id")int id, Model model){
+    public String update(Beauty beauty ,@PathVariable("id")int id, Model model,@RequestParam("status") String status){
         try{
             if(Assert.isNull(beauty)){
                 return null;
             }
             beauty.setId(id);
-            model.addAttribute("beauty",beauty);
+            String stt = new String();
+            System.out.println(status);
+            if(status.equals("1")){
+                stt = "Yes";
+            }else if (status.equals("0")){
+                stt = "No";
+            }else{
+                stt = "不是0和1";
+            }
+            beauty.setId(id);
+            beauty.setStatus(stt);
             beautyService.updateBeauty(beauty);
+            model.addAttribute("beauty",beauty);
             return "redirect:/beauty/list";
         }catch(SSException e){
             LogClerk.errLog.error(e);

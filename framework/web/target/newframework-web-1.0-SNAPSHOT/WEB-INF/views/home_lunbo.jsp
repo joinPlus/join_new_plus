@@ -64,12 +64,14 @@
             <tr>
                 <th>图片</th>
                 <th>名称</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             <c:forEach items="${lunboList}"  var="lunbo" varStatus="status">
             <tr>
                 <td><img src="${lunbo.path}"/></td>
                 <td>${lunbo.name}</td>
+                <td>${lunbo.status}</td>
                 <td>
                     <a href="${website}lunbo/toUpdate/${lunbo.id}">
                         <img src="../../img/change.png" class="update" />

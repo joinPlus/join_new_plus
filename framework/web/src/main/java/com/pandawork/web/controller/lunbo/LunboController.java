@@ -3,6 +3,7 @@ package com.pandawork.web.controller.lunbo;
 import com.pandawork.common.entity.lunbo.Lunbo;
 import com.pandawork.core.common.exception.SSException;
 import com.pandawork.core.common.log.LogClerk;
+import com.pandawork.core.common.util.Assert;
 import com.pandawork.service.LunboService;
 import com.pandawork.web.spring.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
@@ -45,10 +47,20 @@ public class LunboController extends AbstractController{
         }
     }
 
-//    @RequestMapping(value = "/toAdd",method = RequestMethod.GET)
-//    public String toAddPerson() {
-//        return "add";
-//    }
+    @RequestMapping(value = "/list2", method = RequestMethod.GET)
+    public String lunboList2(Model model) {
+        try {
+            List<Lunbo> list = Collections.emptyList();
+            list = lunboService.listAllLunbo();
+            //此即为foreach循环的item
+            model.addAttribute("lunboList2", list);
+            return "TestHomeLLL";
+        } catch (SSException e) {
+            LogClerk.errLog.error(e);
+            sendErrMsg(e.getMessage());
+            return ADMIN_SYS_ERR_PAGE;
+        }
+    }
 
     @RequestMapping("/add")
     public String addLunbo(Lunbo lunbo, HttpSession session, MultipartFile uploadFile, Model model) throws SSException {
@@ -95,9 +107,20 @@ public class LunboController extends AbstractController{
     }
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    public String update(Lunbo lunbo ,@PathVariable("id")int id, Model model){
+    public String update(Lunbo lunbo ,@PathVariable("id")int id, Model model,@RequestParam("status") String status){
         try{
             lunbo.setId(id);
+            String stt = new String();
+            System.out.println(status);
+            if(status.equals("1")){
+                stt = "已选中";
+            }else if (status.equals("0")){
+                stt = "未选中";
+            }else{
+                stt = "不是0和1";
+            }
+            lunbo.setId(id);
+            lunbo.setStatus(stt);
             model.addAttribute("lunbo",lunbo);
             lunboService.updateLunbo(lunbo);
             return "redirect:/lunbo/list";

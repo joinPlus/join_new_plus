@@ -62,17 +62,19 @@
             <tr>
                 <th>标题</th>
                 <th>图片</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             <c:forEach items="${beautyList}"  var="beauty" varStatus="status">
-            <tr>
-                <td>${beauty.name}</td>
-                <td><img src="${beauty.path}" width="230px" height="180px" /></td>
-                <td>
-                    <a href="${website}beauty/toUpdate/${beauty.id}"><button type="submit"  value="修改">修改</button></a>
-                    <a href="${website}beauty/del/${beauty.id}"><button type="submit"  value="修改">删除</button></a>
-                </td>
-            </tr>
+                <tr>
+                    <td>${beauty.name}</td>
+                    <td><img src="${beauty.path}" width="230px" height="180px" /></td>
+                    <td>${beauty.status}</td>
+                    <td>
+                        <a href="${website}beauty/toUpdate/${beauty.id}"><button type="submit"  value="修改">修改</button></a>
+                        <a href="${website}beauty/del/${beauty.id}"><button type="submit"  value="修改">删除</button></a>
+                    </td>
+                </tr>
             </c:forEach>
         </table>
         <div id="tool">

@@ -3,8 +3,16 @@ $(function(){
         "width":"150px",
         "text-align":"center"
     });
+    $("#simgle_photo tr td:nth-child(3)").css({
+        "width":"60px",
+        "text-align":"center"
+    });
+    $("#simgle_photo tr td:nth-child(3) input").css({
+        "width":"20px",
+        "height":"20px"
+    })
     $("#simgle_photo tr td:last-child").css({
-        "width":"400px",
+        "width":"300px",
         "text-align":"center"
     })
 
@@ -12,15 +20,27 @@ $(function(){
     $("#sure_change").click(function(){
         $("#new_title").focus()
     })
-    //图片浏览
-    $("#change_through").click(function(){
-        $("#change_file").click();
-    })
-    $("#photo_address").focus(function(){
-        $("#change_file").click();
-    })
-    $("#change_file").change(function(){
-        $("#photo_address").val($(this).val());
-    })
 
+    //hidden值改变
+    $(".choice").click(function(){
+        if($(".choice").is(":checked")){
+            $(".hidden").val("1");
+        }
+        else{
+            $(".hidden").val("0");
+        }
+    })
+    //复选框状态
+    if($("#status").text() == "Yes"){
+        $(".choice").prop("checked",true);
+    }
+    //限制选中
+    alert($(".choice:checked").length);
+    $(".choice").click(function(){
+        var num = $("input[name='choose']:checked").length;
+        if(num > 6){
+            alert("最多只能选中6张图片！");
+            return false;
+        }
+    })
 })

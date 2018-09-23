@@ -24,6 +24,10 @@ public class Beauty extends AbstractEntity{
     @Column(name = "path")
     private String path;
 
+
+    @Column(name = "status")
+    private String status;
+
     public Integer getId() {
         return id;
     }
@@ -49,12 +53,21 @@ public class Beauty extends AbstractEntity{
         this.path = path;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "Lunbo{" +
+        return "Beauty{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", path='" + path + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

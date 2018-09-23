@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../css/common_slide.css" />
     <link rel="stylesheet" href="../../css/update.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js" ></script>
-    <script type="text/javascript" src="../../js/common.js" ></script>
+    <script type="text/javascript" src="../../js/common_slide.js" ></script>
     <script type="text/javascript" src="../../js/update.js" ></script>
     <title>修改页面</title>
 </head>
@@ -44,15 +44,15 @@
 <div id="sidebar">
     <ul>
         <li></li>
-        <li><a href="">轮播图管理</a></li>
-        <li><a href="">公告管理</a></li>
-        <li><a href="">部门成员管理</a></li>
+        <li><a href="${website}lunbo/list">轮播图管理</a></li>
+        <li><a href="${website}board/list">公告管理</a></li>
+        <li><a href="${website}user/list">部门成员管理</a></li>
         <li><a href="">日历管理</a></li>
-        <li><a href="">课件管理</a></li>
-        <li><a href="">活动管理</a></li>
-        <li><a href="">风采图片管理</a></li>
-        <li><a href="">报名人员管理</a></li>
-        <li><a href="">提交意见查看</a></li>
+        <li><a href="lessonFiles.html">课件管理</a></li>
+        <li><a href="${website}activity/list">活动管理</a></li>
+        <li><a href="${website}beauty/list">风采图片管理</a></li>
+        <li><a href="${website}entry/listAll">报名人员管理</a></li>
+        <li><a href="Suggestions.html">提交意见查看</a></li>
     </ul>
 </div>
 <div id="registration_form_title">
@@ -65,6 +65,7 @@
             <tr>
                 <th>图片</th>
                 <th>名称</th>
+                <th>是否选中</th>
                 <th>操作</th>
             </tr>
             <tr>
@@ -74,6 +75,10 @@
                 </td>
                 <td>
                     <input type="text" name="name" id="change" value="${lunbo.name}"/>
+                </td>
+                <td>
+                    <input type="checkbox" class="choice" />
+                    <input type="hidden" name="status" class="hidden" value="0" />
                 </td>
                 <td>
                     <input type="submit" name="submit" value="修改" id="besure" />

@@ -8,6 +8,7 @@
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="path" column="path"/>
+        <result property="status" column="status"/>
     </resultMap>
 
     <select id="listAllBeauty" resultMap="beauty">
@@ -29,7 +30,8 @@
     <update id="updateBeauty">
         UPDATE `t_beauty_out`
         SET `name` = #{beauty.name},
-            `path` = #{beauty.path}
+            `path` = #{beauty.path},
+            `status` = #{beauty.status}
         WHERE `id` = #{beauty.id}
     </update>
 

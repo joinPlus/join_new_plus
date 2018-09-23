@@ -30,4 +30,14 @@ $(function(){
 		var path=$("#file").val()
 		$(this).val(path)
 	})
+    $("#sidebar ul li:nth-child(2) a").hover(function(){
+        $(this).css({
+            "background-color":"rgb(78,84,101)"
+        });
+    },function(){
+        $(this).css({
+            "background-color":"rgb(78,84,101)"
+        });
+    });
+
 })
