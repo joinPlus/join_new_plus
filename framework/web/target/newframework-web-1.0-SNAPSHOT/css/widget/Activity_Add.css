@@ -15,30 +15,35 @@ a:hover{
     font-size: 20px;
 }
 #load_table{
+    border: 1px solid red;
     position: relative;
-    width: 1000px;
+    width: 1300px;
     margin: 0 auto;
     margin-top: 4%;
 }
-#simgle_photo tr th{
-    font-size: 120%;
+#sidebar ul li:nth-child(7) a{
+    background-color: rgb(78,84,101);
 }
 #simgle_photo tr th,td{
+    text-align: center;
     border: 1px solid rgb(226,226,226);
 }
 #simgle_photo tr td:first-child input{
-    width: 300px;
+    width: 100px;
     height: 35px;
-    text-align: center;
+    background-color: rgba(0,0,0,0);
+    color: black;
+    border: 0.3px solid gray;
+}
+#simgle_photo tr td:nth-child(2) input{
+    width: 250px;
+    height: 35px;
     background-color: rgba(0,0,0,0);
     color: black;
     border: 0;
-    font-size: 140%;
 }
-#simgle_photo tr td:nth-child(2){
-    width: 300px;
+#simgle_photo tr td:nth-child(3){
     height: 250px;
-    text-align: center;
 }
 #simgle_photo tr td button{
     width: 60px;
@@ -56,7 +61,20 @@ a:hover{
     border: 1px solid rgb(74,80,80);
     background-color: rgb(74,80,80);
 }
-.choice{
+#new_tool{
+    margin-bottom: 5%;
+}
+#new_tool div{
+    margin-bottom: 2%;
+}
+#new_tool input{
+    width: 100px;
+    height: 30px;
+    border: 0.4px solid gray;
+    border-radius: 6px;
+    text-indent: 5px;
+}
+.choose{
     width: 20px;
     height: 20px;
 }

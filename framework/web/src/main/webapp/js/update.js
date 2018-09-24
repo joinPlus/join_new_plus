@@ -40,4 +40,18 @@ $(function(){
         });
     });
 
+    //hidden值改变
+    $(".choice").click(function(){
+        if($(".choice").is(":checked")){
+            $(".hidden").val("1");
+        }
+        else{
+            $(".hidden").val("0");
+        }
+    })
+    //复选框状态
+    if($("#status").text() == "Yes"){
+        $(".choice").prop("checked",true);
+    }
+
 })

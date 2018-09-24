@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/base/reset.css" />
     <link rel="stylesheet" href="../../css/common_slide.css" />
-    <li nk rel="stylesheet" href="../../css/update.css" />
+    <link rel="stylesheet" href="../../css/update_new.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js" ></script>
     <script type="text/javascript" src="../../js/common_slide.js" ></script>
-    <script type="text/javascript" src="../../js/update.js" ></script>
+    <script type="text/javascript" src="../../js/Update.js" ></script>
     <title>修改页面</title>
 </head>
 <body>
@@ -65,7 +65,7 @@
             <tr>
                 <th>图片</th>
                 <th>名称</th>
-                <th>是否选中</th>
+                <th>选中</th>
                 <th>操作</th>
             </tr>
             <tr>
@@ -77,10 +77,11 @@
                     <input type="text" name="name" id="change" value="${lunbo.name}"/>
                 </td>
                 <td>
-                    <input type="checkbox" class="choice" />
+                    <input type="checkbox" class="choice" name="choose" />
                     <input type="hidden" name="status" class="hidden" value="0" />
                 </td>
                 <td>
+                    <span id="status">${lunbo.status}</span>
                     <input type="submit" name="submit" value="修改" id="besure" />
                     <a href="/lunbo/list"><button>取消</button></a>
                 </td>

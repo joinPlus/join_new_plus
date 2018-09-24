@@ -113,9 +113,9 @@ public class LunboController extends AbstractController{
             String stt = new String();
             System.out.println(status);
             if(status.equals("1")){
-                stt = "已选中";
+                stt = "Yes";
             }else if (status.equals("0")){
-                stt = "未选中";
+                stt = "No";
             }else{
                 stt = "不是0和1";
             }
