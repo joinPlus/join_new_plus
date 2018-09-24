@@ -89,7 +89,7 @@ public class ProjectController extends AbstractController {
             Project project = new Project();
             project = projectService.selectById(id);
             model.addAttribute("project",project);
-            return "update";
+            return "redirect:/project/list";
         }catch(SSException e){
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());
@@ -97,16 +97,17 @@ public class ProjectController extends AbstractController {
         }
     }
 
-    @RequestMapping(value = "/update/{id}",method = RequestMethod.POST)
-    public String update(Project project , @PathVariable("id")int id, Model model){
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public String update(Project project , @RequestParam("id")int id, Model model){
         try{
             if(Assert.isNull(project)){
                 return null;
             }
             project.setId(id);
-            model.addAttribute("project",project);
             projectService.updateProject(project);
-            return "redirect:/project/list";
+            project = projectService.selectById(id);
+            model.addAttribute("project",project);
+            return "Konghome";
         }catch(SSException e){
             LogClerk.errLog.error(e);
             sendErrMsg(e.getMessage());

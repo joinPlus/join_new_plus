@@ -66,7 +66,6 @@
                 <th>选中</th>
                 <th>操作</th>
             </tr>
-
             <tr>
                 <td>
                     <input type="text" name="name" value="${beauty.name}"/>

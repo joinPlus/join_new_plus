@@ -7,6 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <title>ueditor demo</title>
+    <link rel="stylesheet" href="../../css/reset（inner).css" />
+    <link rel="stylesheet" href="../../css/inner.css" />
+    <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../js/inner.js" ></script>
 </head>
 
 <body>
@@ -22,66 +26,281 @@
 <script type="text/javascript">
     var ue = UE.getEditor('container');
 </script>
-<div style="margin-top:150px;" align="center">
-    <form name="form" action="${pageContext.request.contextPath}/project/select" method="post">
-        <input type="text"style="width: 300px;height: 40px;border-radius:5px;border:1px;" name="keyword" placeholder="请输入您想查找的项目有关信息" autocomplete="off">
-        <input type="submit" value="搜索">
-    </form>
-    <table border="1" >
-        <tr bgcolor="#a9a9a9">
-            <th>编号</th><th>项目名称</th><th>项目日期</th><th>项目完成日期</th><th>项目内容</th><th colspan="2" align="center">操作</th>
-        </tr>
-        <c:forEach items="${projectList}"  var="project" varStatus="status">
-            <tr>
-                <td>${status.index+1}</td>
-                <td>
-                        ${project.project_name}
-                </td>
-                <td>
-                        ${project.project_date}
-                </td>
-                <td>
-                        ${project.project_finish}
-                </td>
-                <td>
-                        ${project.project_content}
-                </td>
-                <td>
-                    <a href="${website}project/toUpdate/${project.id}">修改</a>
-                </td>
-                <td>
-                    <a href="${website}project/del/${project.id}">删除</a>
-                </td>
-            </tr>
-        </c:forEach>
-        <tr>
-            <td colspan="7" align="right"><a href="/project/toAdd">添加</a></td>
-        </tr>
-    </table>
+<!--固定的头部-->
+<div class="top">
+    <a href="#">工作室首页</a>
+    <span style="color: #000000;">|</span>
+    <a href="#">工作室内网</a>
+    <div class="formbox">
+        <form action="#" method="post">
+            <input type="button" name="logout" value="退出登录" />
+        </form>
+        <form action="#" method="post">
+            <input type="text" placeholder="搜索" />
+            <input type="button" name="search" value="搜索" />
+        </form>
+    </div>
 </div>
-<div style="margin-top:250px;" align="center">
+<!--工作室图标部分，也是固定的-->
+<div class="studio">
+    <p>东北师范大学卓音工作室</p>
+</div>
+<!--以下是网页的主体部分-->
+<div class="content">
+    <!--通知栏的图标部分-->
+    <div class="notice_pic">
+        <img src="../../img/notice.png" />
+        <div class="notice_a">
+            <a>工作室通知</a>
+            <span>|</span>
+            <a>我的作业</a>
+        </div>
+    </div>
+    <div class="ppt_and_calendar">
+        <!--这是PPT以及日历的盒子-->
+        <!--PPT-->
+        <div id="notice">
+            <div id="inside_table">
+                <table>
+                    <tr>
+                        <!-- 数据库中存放图片 -->
+                        <td><img src="../../img/message.png" /></td>
+                        <!-- 数据库中存放文档标题 -->
+                        <td></td>
+                        <!-- 数据库中存放上传文档的日期 -->
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="bottom">
+                <form action="StuNotice.html" method="post">
+                    <input type="text" name="address" id="address" />
+                    <input type="file" name="file" id="file" /><!-- 用#browse按钮代替#file<input> -->
+                    <button type="button" name="browse" id="browse">浏览</button>
+                    <button type="submite" name="submite" id="submite">上传</button>
+                </form>
+            </div>
+        </div>
+        <!--日历-->
+        <div class="calendar">
+            <span></span>
+            <table>
+                <tr class="first">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title="aaa"></td>
+                    <td title=""></td>
+                    <td title="aaa"></td>
+                </tr>
+                <tr>
+                    <td title="aaa"></td>
+                    <td title="aaa"></td>
+                    <td title="aaa"></td>
+                    <td title="aaa"></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                </tr>
+                <tr>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                </tr>
+                <tr>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                </tr>
+                <tr>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                </tr>
+                <tr>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                    <td title=""></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="project_pic">
+        <img src="../../img/browser.png" />
+        <div class="project_a">
+            <a>工作室项目</a>
+            <span>|</span>
+            <a>项目进度</a>
+        </div>
+    </div>
+    <div class="project">
+        <div class="hidden">
+            <div class="project_child">
+                <table>
+                    <tr>
+                        <td>编号</td>
+                        <td>项目名称</td>
+                        <td></td>
+                        <td>项目进度</td>
+                        <td>操作</td>
+                    </tr>
+                    <c:forEach items="${projectList}"  var="project" varStatus="status">
+                        <tr>
+                            <td>${status.index+1}</td>
+                            <input value="${project.id}" hidden />
+                            <td>${project.project_name}</td>
+                            <td>-------------------</td>
+                            <td>${project.project_content}</td>
+                            <td>
+                                <a href="${website}project/del/${project.id}" id="delete_a"><img src="../../img/delete.png" /></a>
+                                <a title="上传" id="update_a"><img src="../../img/update.png" /></a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <a>
+                <button type="submit" id="add_btn" value="增加">增加</button>
+                </a>
+            </div>
+        </div>+
+        <div class="addcontent">
+            <form action = "/project/add" method="post">
+                <table>
+                    <tr>
+                        <td>项目名称：</td>
+                        <td><input type="text" class="pro_name" name="project_name"/></td>
+                        <td class="req_name"></td>
+                    </tr>
+                    <tr>
+                        <td>开始时间：</td>
+                        <td><input type="text" class="pro_start" name="project_date" /></td>
+                        <td class="req_start"></td>
+                    </tr>
+                    <tr>
+                        <td>结束时间：</td>
+                        <td><input type="text" class="pro_finish" name="project_finish"/></td>
+                        <td class="req_finish"></td>
+                    </tr>
+                    <tr>
+                        <td>内容：</td>
+                        <td><textarea class="pro_content" name="project_content"></textarea> </td>
+                        <td class="req_content"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <a href="/project/list"><button type="button" value = "返回">返回</button></a>
+                            <input type="submit" name="submit" id="addsubmit" value="添加" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="updatecontent">
+
+            <form action="/project/update" method="post">
+                <input type="text"  hidden id="hide_input" name="id"/>
+                <table>
+                    <tr>
+                        <td>项目名称：</td>
+                        <td>
+                            <input type="text" class="pro_name" name="project_name" value="${project.project_name}" />
+                        </td>
+                        <td class="req_name"></td>
+                    </tr>
+                    <tr>
+                        <td>开始时间：</td>
+                        <td><input type="text" class="pro_start" name="project_date" value="${project.project_date}"/></td>
+                        <td class="req_start"></td>
+                    </tr>
+                    <tr>
+                        <td>结束时间：</td>
+                        <td><input type="text" class="pro_finish" name="project_finish" value="${project.project_finish}" /></td>
+                        <td class="req_finish"></td>
+                    </tr>
+                    <tr>
+                        <td>内容：</td>
+                        <td><textarea class="pro_content" name="project_content" value="${project.project_content}" ></textarea></td>
+                        <td class="req_content"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href="/project/list"><button type="button" value = "返回">返回</button></a>
+                            <input type="submit" name="submit" id="addsubmit" value="上传" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <img src="../../img/projectmanagement.png" id="projectpic" />
+    </div>
     <tr>
         <td colspan="7" align="right"><a href="/answer2/list">前往超管页面</a></td>
     </tr>
-    <form action="/answer2/add" method="post">
-        <table border="1">
-            <tr>
-                <td>
-                    <%--<input type="text" name="inquiry_answer2"/>--%>
-                    <textarea id="container" name="inquiry_answer2" type="text/plain"></textarea>
-                </td>
-            </tr>
-            <th align="center">
-                <a href="/answer2/list"><input type="button" value="取消" ></a>
-            </th>
-            <th align="right">
-                <input type="submit" name="submit" value="添加"/>
-            </th>
-            </tr>
-        </table>
-    </form>
 
-</div>
+
+    <div id="suggestion">
+        <div id="sug_title">
+            <img src="../../img/write.png" />
+            <span>你问我答</span>
+        </div>
+        <div id="question">
+            <form action="/answer2/add" method="post">
+                <div id="question_one">
+                    <span>你对工作室有什么建议？</span><p></p>
+                    <textarea id="tx_question_one" name="inquiry_answer2" type="text/plain"></textarea><p></p>
+                </div>
+                <%--<tr>--%>
+                <%--<td>--%>
+                <%--&lt;%&ndash;<input type="text" name="inquiry_answer2"/>&ndash;%&gt;--%>
+                <%--<textarea id="container" name="inquiry_answer2" type="text/plain"></textarea>--%>
+                <%--</td>--%>
+                <%--</tr>--%>
+                <div id="operate_tool">
+                    <a href="/answer2/list"><button type="button" name="cancel_question" class="cancel_question" value="取消">取消</button></a>
+                    <button type="submit" name="submite" class="submite">提交</button>
+                </div>
+                <%--<th align="center">--%>
+                <%--<a href="/answer2/list"><input type="button" value="取消" ></a>--%>
+                <%--</th>--%>
+                <%--<th align="right">--%>
+                <%--<input type="submit" name="submit" value="添加"/>--%>
+                <%--</th>--%>
+                <%--</tr>--%>
+                <div id="question_two">
+                    <span>你对工作室有什么建议？</span>
+                    <textarea class="tx_question_two" name="inquiry_answer2" type="text/plain"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>东北师范大学卓音工作室Join&nbsp;Studio</p>
+    </div>
 </body>
-
-</html>
+</html>v
