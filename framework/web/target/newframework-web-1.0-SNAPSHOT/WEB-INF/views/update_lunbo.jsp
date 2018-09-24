@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/base/reset.css" />
     <link rel="stylesheet" href="../../css/common_slide.css" />
-    <link rel="stylesheet" href="../../css/update.css" />
+    <li nk rel="stylesheet" href="../../css/update.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js" ></script>
     <script type="text/javascript" src="../../js/common_slide.js" ></script>
     <script type="text/javascript" src="../../js/update.js" ></script>

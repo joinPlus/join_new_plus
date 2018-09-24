@@ -34,13 +34,4 @@ $(function(){
     if($("#status").text() == "Yes"){
         $(".choice").prop("checked",true);
     }
-    //限制选中
-    alert($(".choice:checked").length);
-    $(".choice").click(function(){
-        var num = $("input[name='choose']:checked").length;
-        if(num > 6){
-            alert("最多只能选中6张图片！");
-            return false;
-        }
-    })
 })

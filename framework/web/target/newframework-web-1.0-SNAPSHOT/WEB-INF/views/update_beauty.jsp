@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/widget/ActivitiesImg_change.css" />
     <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../../js/Title&Sidebar.js"></script>
-    <script type="text/javascript" src="../../js/ActivitiesImg_change.js"></script>
+    <script type="text/javascript" src="../../js/ActivitiesImg_Change.js"></script>
 </head>
 <body>
 <div id="title">
